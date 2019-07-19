@@ -1,0 +1,69 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    background-color: #cbffcd;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+
+form {
+    border: 1em;
+    padding: 1em;
+}
+
+fieldset {
+    -webkit-box-shadow: 10px 10px 5px 0 rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0 rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0 rgba(0,0,0,0.75);
+    padding: 1em;
+    border: none;
+    background: white;
+}
+
+.width-80 {
+    width: 80%;
+    margin: 0 auto;
+
+}
+
+.form-group {
+    width: 100%;
+    margin-top: .5em;
+    margin-bottom: .5em;
+
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-control {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    /* You'll need to use the `calc` function to make the width of this element match the width of the button */
+    /* See the example at: https://developer.mozilla.org/en-US/docs/Web/CSS/calc */
+    width: calc(100% - 4px);
+    /* HINT: Calculate based on the padding of the `.btn` class */
+
+}
+
+.btn {
+    /* There must be a separation of 8px between the text and the border of this element */
+    padding: 8px;
+    /* The text color of this element should be white and bold */
+    font-weight: bold;
+    color: white;
+    /* The border of this element should be 1px, and its color should be light grey */
+    border: 1px solid lightgrey;
+    background-color: #0fb784;
+}
+
+.btn-block {
+    width: 100%;
+}
