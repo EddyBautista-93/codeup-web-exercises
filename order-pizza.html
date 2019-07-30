@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bootstrap</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel=“stylesheet” href=“https://use.fontawesome.com/releases/v5.8.1/css/all.css” integrity=“sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf” crossorigin=“anonymous”>
+</head>
+<body>
+    <form method="POST" action="https://www.elformo.com/forms/db3e152f-498e-41f4-ac68-fc9d1a009044">
+    <div id="page-wrap">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Pizza World</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Order Online <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Menu</a>
+                </li>
+
+            </ul>
+<!--            <form class="form-inline my-2 my-lg-0">-->
+<!--                <input class="form-control mr-sm-2" type="search" placeholder="Zipcode" aria-label="Search">-->
+<!--                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+<!--            </form>-->
+            <div> <i class="fas fa-user">SignUp</i> </div>
+        </div>
+    </nav>
+    <section>
+        <div class="d-none d-lg-block">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Welcome to pizza world</h1>
+                <p class="lead"></p>
+            </div>
+        </div>
+        </div>
+        <h2>Build your own pizza!</h2>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" href="#"><span class="badge badge-secondary">1</span></h6>
+                    Size and crust</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><span class="badge badge-secondary">2</span></h6>
+                    Cheese and Sauce</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><span class="badge badge-secondary">3</span></h6>
+                    Toppings</a>
+            </li>
+        </ul>
+        <div class="card">
+            <div class="card-header-1">
+                Choose size and crust
+            </div>
+            <div class="card-body">
+
+                <div class="card" style="width: 100%;">
+                    <div class="card-header">
+                        Hand Tossed
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste</li>
+                        <li class="list-group-item"><input type="radio" aria-label="Radio button for following text input">Small(10")</li>
+                        <li class="list-group-item"><input type="radio" aria-label="Radio button for following text input">Medium (12")</li>
+                    </ul>
+                    <div class="card" style="width: 100%;">
+                        <div class="card-header">
+                            Crispy Thin
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Thin enough for optimum cripsy to crunchy ratio.</li>
+                            <li class="list-group-item"><input type="radio" aria-label="Radio button for following text input">Medium (12")</li>
+                            <li class="list-group-item"><input type="radio" aria-label="Radio button for following text input">Large (14")</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-header">
+                    <p class="text-right">
+                    <button type="button" class="btn btn-primary">Next Step</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header-1">
+                Choose Cheese and sauce
+            </div>
+            <div class="card-body">
+
+                <div class="card" style="width: 100%;">
+                    <div class="card-header">
+                        Cheese
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">How Much</li>
+                        <li class="list-group-item"><select class="form-control form-control-sm">
+                            <option>Regular</option>
+                        </select></li>
+
+                    </ul>
+                    <div class="card" style="width: 100%;">
+                        <div class="card-header">
+                            Sauce
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">What type?</li>
+                            <li class="list-group-item"><select class="form-control form-control-sm">
+                                <option>Robust inspired Tomato Sauce</option>
+                            </select></li>
+                            <li class="list-group-item">How Much?</li>
+                            <li class="list-group-item"><select class="form-control form-control-sm">
+                                <option>Regular</option>
+                            </select></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-header">
+                    <p class="text-right">
+                        <button type="button" class="btn btn-primary">Previous Step</button>
+                        <button type="button" class="btn btn-primary">Next Step</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header-1">
+                Choose Toppings
+            </div>
+            <div class="card-body">
+
+                <div class="card" style="width: 100%;">
+                    <div class="card-header">
+                        Choose Meats
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"> Beef</li>
+                        <li class="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"> Ham</li>
+                        <li class="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"> Philly Steak</li>
+                        <li class="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"> Bacon</li>
+                    </ul>
+                    <div class="card" style="width: 100%;">
+                        <div class="card-header">
+                            Choose Non-Meats
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"> Green Peppers</li>
+                            <li class="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"> Mushrooms</li>
+                            <li class="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"> Onions</li>
+                            <li class="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"> Jalapeno Peppers</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-header">
+                    <p class="text-right">
+                        <button type="submit" class="btn btn-primary">Checkout<i class="fas fa-shopping-cart"></i></button>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</div>
+    </form>
+</body>
+</html>
