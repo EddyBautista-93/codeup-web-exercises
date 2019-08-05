@@ -1,0 +1,50 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+div {
+    border-radius: 5px solid;
+    border: 1px solid lightgrey;
+    margin: 1em;
+    width: calc(100% - 4em);
+}
+
+.message{
+    border-radius: 3px;
+    background-color: plum;
+    margin: 1em;
+    padding: .5;
+}
+
+}
+
+.message-message-info {
+
+    background-color: #CEDFFE;
+    color: #393592;
+
+}
+
+.message-message-success {
+
+    background-color: #D0F2DB ;
+    color: #2C7B4A;
+
+}
+
+.message-message-warning {
+
+    background-color: #FCFACB;
+    color: #89761D;
+
+}
+
+.message-message-error {
+
+    background-color: #F4CED2;
+    color: #8A2740;
+
+}
