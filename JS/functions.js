@@ -8,14 +8,14 @@
  * Example
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
-// function name is sayHello
+// // function name is sayHello
+// //
 //
-
-    function sayHello(str) {
-    return "hello" + " " + str;
-}
-    console.log(sayHello("Codeup"));
-
+//     function sayHello(str) {
+//     return "hello" + " " + str;
+// }
+//     console.log(sayHello("Codeup"));
+//
 
 
 /**
@@ -26,17 +26,12 @@
  * console.log 'helloMessage' to check your work
  */
 // function is called sayHello
-//input string
-//output is
-// make the variable of helloMessage have the value of your name
-//
-//     function sayHello(str) {
-//
-//         return var helloMessage = str;
+
+//     function sayHello(helloMessage) {
+//         return helloMessage;
 // }
-//     console.log(sayHello(eddy));
-
-
+//     var helloMessage = sayHello("eddy");
+//     console.log(helloMessage);
 /**
  * TODO:
  * Store your name as a string in a variable named 'myName', and pass that
@@ -44,8 +39,8 @@
  * console.
  */
 
-    //function is sayHello
-    //var myName = "eddy"
+    // function is sayHello
+    // var myName = "eddy"
 //
 //     function sayHello(str){
 //         var myName = str;
@@ -129,8 +124,8 @@ var random = Math.floor((Math.random() * 3) + 1);
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
-function applyDiscount(originalPrice, discountPercent) {
-    return originalPrice-(originalPrice * discountPercent);
-
-}
-console.log(applyDiscount(100, .2))
+// function applyDiscount(originalPrice, discountPercent) {
+//     return originalPrice-(originalPrice * discountPercent);
+//
+// }
+// console.log(applyDiscount(100, .2))
