@@ -225,24 +225,24 @@ console.log(calculateTotal(4, 100));
  * and alerts to display to the user what their lucky number was, what their
  * price before the discount was, and what their price after the discount is.
  */
-// Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
-// var price = prompt("What is your Bill?");
-//
-// function calculateTotal(luckyNumber, price) {
-//     if( luckyNumber === 0 ) {
-//         alert("Your number was 0 , your bill is " + price);
-//     } else if ( luckyNumber === 1) {
-//         alert("Your number was 1, your bill of " + price + " is now " + " " + ( price - (price * .10 )));
-//     } else if (luckyNumber === 2){
-//         alert("Your number was 2, your bill of " + price + " is now " + " " + ( price - (price * .25 )));
-//     } else if ( luckyNumber === 3){
-//         alert("Your number was 3, your bill of " + price + " is now " + " " + ( price - (price * .35 )));
-//     } else if ( luckyNumber === 4) {
-//         alert("Your number was 4, your bill of " + price + " is now " + " " + ( price - (price * .50 )));
-//     } else {
-//         alert("Your number was 5, your bill of " + price + " is now " + " " + ( price - price));
-//     }
-// }
-//
-// console.log(calculateTotal(luckyNumber, price));
+Generate a random number between 0 and 6
+var luckyNumber = Math.floor(Math.random() * 6);
+var price = prompt("What is your Bill?");
+
+function calculateTotal(luckyNumber, price) {
+    if( luckyNumber === 0 ) {
+        alert("Your number was 0 , your bill is " + price);
+    } else if ( luckyNumber === 1) {
+        alert("Your number was 1, your bill of " + price + " is now " + " " + ( price - (price * .10 )));
+    } else if (luckyNumber === 2){
+        alert("Your number was 2, your bill of " + price + " is now " + " " + ( price - (price * .25 )));
+    } else if ( luckyNumber === 3){
+        alert("Your number was 3, your bill of " + price + " is now " + " " + ( price - (price * .35 )));
+    } else if ( luckyNumber === 4) {
+        alert("Your number was 4, your bill of " + price + " is now " + " " + ( price - (price * .50 )));
+    } else {
+        alert("Your number was 5, your bill of " + price + " is now " + " " + ( price - price));
+    }
+}
+
+console.log(calculateTotal(luckyNumber, price));

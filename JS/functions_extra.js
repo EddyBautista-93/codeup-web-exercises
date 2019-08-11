@@ -100,17 +100,37 @@
 
 // Make a function named isVowel(letter)
 
-    function isVowel(input) {
-        return (input === "a");
-    }
-        console.log(isVowel(""));
+    // function isVowel(input) {
+    //     return (input === "a");
+    // }
+    //     console.log(isVowel("a, e, i, o , u"));
 // Make a function named isConsonant(letter)
 // Make a function named isCapital(letter)
 // Make a function named isLowerCase(letter)
 // Make a function named hasLowerCase(string) that returns if a string has any lower cased letter
+
+// function hasLowerString(input) {
+//     return input === input.toLowerCase();
+// }
+//
+// console.log(hasLowerString("jhuhuhui"));
+
+
 // Make a function named isSpace(letter) that returns if a character is a space character
 // Make a function named isZero(number)
+
+
+// function isZero(num) {
+//     return num === 0;
+// }
+// console.log(isZero(0));
 // Make a function named notZero(input) that returns true if the input is not zero
+
+function notZero(num){
+    if (num );
+}
+
+console.log(notZero(1));
 // Write a function named lowerCase(string)
 // Write a function named double(n) that returns a number times two
 // Write a function named triple(n) that returns a number times 3
