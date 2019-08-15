@@ -1,13 +1,70 @@
 // Make a function named isNumeric(input) that returns if the input is a number like 5 or 2.3 or a string containing only a number like "2". Example isNumeric(3) is - true. isNumeric("banana") should return false.
 
 
+    // function isNumeric(input) {
+    //     return !isNaN(parseFloat(input));
+    // }
+    // console.log(isNumeric("23"));
 
 //     Make a function named isEqual(input1, input2) that returns if both inputs have the same value. areEqual
+
+    // function isEqual(input1, input2) {
+    //     return input1 == input2;
+    // }
+    // console.log(isEqual(0, 2));
+
 // Make a function named isIdentical(input1, input2) that returns if both inputs are same value and data type.
-//     Make a function named not(input) returns the input with a flipped boolean
+
+    // function isIdentical(input1, input2) {
+    // return input1 === input2;
+    // }
+    // console.log(isIdentical(1, 1));
+    //
+
+//     Make a function named not(input) returns the input with a flipped boolean.
+
+    //     function not(input) {
+    //         if(input === true){
+    //             return false;
+    //         }else {
+    //             return true;
+    //         }
+    //     }
+    // console.log(not(false));
+
 // Make a function named isOdd(number) that returns true if the number is odd
+//
+//     function isOdd(num) {
+//     if(num % 2 === 1) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+//     }
+//     console.log(isOdd("7"));
+
 // Make a function named isEven(number) that returns true if the number is even or zero
+
+// function isEven(num) {
+//     if(num % 2 === 0) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+// console.log(isEven(0));
+
 // Make a function named isPositive(number) that returns true if the provided input is a positive number. False for zero or any other number or data type.
+
+    //     function isPositive(num) {
+    //     if ( parseInt(num) > 0) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    //     }
+    // console.log(isPositive(2));
+
 //     Make a function named isNegative(number) that returns true if the provided input is a negative number. False for zero or any other number or data type.
 //     Make a function named identity(input) that returns the input exactly as provided.
 //     Make a function named isFive(input)

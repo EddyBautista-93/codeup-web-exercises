@@ -171,6 +171,15 @@ var books = [
      *   `showBookInfo` function.
      */
 
+function createAuthor(firstName, lastName){
+    return {
+        firstName: firstName,
+        lastName: lastName
+    }
+    }
+
+
+
 
 
 })();
