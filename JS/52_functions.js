@@ -66,19 +66,99 @@
     // console.log(isPositive(2));
 
 //     Make a function named isNegative(number) that returns true if the provided input is a negative number. False for zero or any other number or data type.
+
+
+
+// function isNegative(number) {
+//     if (typeof number === "string") {
+//         return false
+//     } else if(number < 0) {
+//         return true;
+//     }
+//         }
+//         console.log(isNegative("-4"));
+
 //     Make a function named identity(input) that returns the input exactly as provided.
+//
+// function idenity(input) {
+//     return input;
+// }
+// console.log(idenity(34));
+
 //     Make a function named isFive(input)
+
+    // function isFive(number){
+    // return number === 5;
+    // }
+    // console.log(isFive("5"));
+
 // Make a function named addFive(input) that adds five to some input.
+//
+// function addFive(number){
+//     if( typeof number === "string"){
+//         return false;
+//     } else{
+//         return number + 5;
+//     }
+// }
+// console.log(addFive("5"));
+
 //     Make a function named isMultipleOfFive(input)
-// Make a function named isThree(input)
+
+    // function isMultipleOfFive(number){
+
+//  Make a function named isThree(input)
+
+    // function isThree(number){
+    // return number === 3;
+    // }
+    // console.log(isThree(2));
+
 // Make a function named isMultipleOfThree(input)
+
+    // function isMultipleOfThree(number) {
+    // return (number % 3 === 0);
+    // }
+    // console.log(isMultipleOfThree(3));
+
 // Make a function named isMultipleOfThreeAndFive(input)
+
+    // function isMultipleOfThreeAndFive(input) {
+    //     return (isMultipleOfThree(input) || isMultipleOfFive(input));
+    // }
+    // console.log(isMultipleOfThreeAndFive(2));
+
 // Make a function named isMultipleOf(target, n) which checks if target is evenly divisible by n
+
+//     function isMultipleOf(target, n) {
+//     return (target % n === 0);
+//     }
+// console.log(isMultipleOf(10,2));
+
 // Make a function named isTrue(boolean)
+
+// function isTrue(input) {
+//     return input === true;
+// }
+// console.log(isTrue(true));
+
 // Make a function named isFalse(boolean)
+
+    // function isFalse(input) {
+    // return input === false;
+    // }
+    // console.log(isFalse(true));
+
 // Make a function named isTruthy(input) // remember that values other than true will behave like true. you may need to lookup truthy/falsy values in JavaScript
+
 // Make a function named isFalsy(input) // remember that values other than false behave like false
+
+
 // Make a function named isVowel(letter)
+
+function isVowel (input) {
+    var vowel = array
+}
 // Make a function named isConsonant(letter)
 // Make a function named isCapital(letter)
 // Make a function named isLowerCase(letter)
