@@ -26,38 +26,38 @@
         center: [-98.493674, 29.425906]
     });
 
-    geocode("Pinch Boil House",token).then(function(result) {
-        console.log(result);
-        map.setCenter(result);
-        map.setZoom(5);
-    });
-
-    var delay = 3000;
-
-    var timeoutId = setTimeout(function () {
-        map.jumpTo({zoom: 15,center: [-98.493674, 29.425906]});
-        map.setStyle ('mapbox://styles/mapbox/streets-v9');
-    }, delay);
-
-    var delay = 6000;
-    var timeout = setTimeout(function () {
-        map.jumpTo({zoom: 20,center: [-98.493674, 29.425906]});
-        map.setStyle ('mapbox://styles/mapbox/streets-v9');
-    }, delay);
-
-    var popup = new mapboxgl.Popup()
-        .setHTML("<h1>Pinch Boil House</h1>");
-
-
-
-    var marker = new mapboxgl.Marker()
-        .setLngLat([-98.493674, 29.425906])
-        .addTo(map)
-        .setPopup(popup);
-
-    marker.togglePopup();
-
-    popup.addTo(map);
+    // geocode("Pinch Boil House",token).then(function(result) {
+    //     console.log(result);
+    //     map.setCenter(result);
+    //     map.setZoom(5);
+    // });
+    //
+    // var delay = 3000;
+    //
+    // var timeoutId = setTimeout(function () {
+    //     map.jumpTo({zoom: 15,center: [-98.493674, 29.425906]});
+    //     map.setStyle ('mapbox://styles/mapbox/streets-v9');
+    // }, delay);
+    //
+    // var delay = 6000;
+    // var timeout = setTimeout(function () {
+    //     map.jumpTo({zoom: 20,center: [-98.493674, 29.425906]});
+    //     map.setStyle ('mapbox://styles/mapbox/streets-v9');
+    // }, delay);
+    //
+    // var popup = new mapboxgl.Popup()
+    //     .setHTML("<h1>Pinch Boil House</h1>");
+    //
+    //
+    //
+    // var marker = new mapboxgl.Marker()
+    //     .setLngLat([-98.493674, 29.425906])
+    //     .addTo(map)
+    //     .setPopup(popup);
+    //
+    // marker.togglePopup();
+    //
+    // popup.addTo(map);
 
 
     var foodPlace = [{

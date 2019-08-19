@@ -156,9 +156,16 @@
 
 // Make a function named isVowel(letter)
 
-function isVowel (input) {
-    var vowel = array
-}
+    //
+    // function isVowel(letter) {
+    //     return ['a', 'e', 'i', 'o', 'u'].indexOf(letter.toLowerCase()) !== -1
+    // }
+    //
+    // console.log(isVowel("a"));
+    // console.log(isVowel("b"));
+    // console.log(isVowel('e'));
+
+
 // Make a function named isConsonant(letter)
 // Make a function named isCapital(letter)
 // Make a function named isLowerCase(letter)
