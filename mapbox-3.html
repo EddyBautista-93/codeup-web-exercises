@@ -13,6 +13,9 @@
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.js'></script>
 <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoiZWRkeWJhdXRpc3RhIiwiYSI6ImNqemloYWY1czE2dzYzY253M3VydHo4ODkifQ.-V9O-Cx6Aw9zJDBrqDcSXg';
+    var token = 'pk.eyJ1IjoiZWRkeWJhdXRpc3RhIiwiYSI6ImNqemloYWY1czE2dzYzY253M3VydHo4ODkifQ.-V9O-Cx6Aw9zJDBrqDcSXg';
+
+
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
@@ -30,6 +33,11 @@
         .addTo(map);
 
 marker.setPopup(popup);
+
+    geocode("124 N Main Ave, San Antonio, TX 78205", token).then(function (r) {
+        console.log(r)
+    });
+
 
 
 </script>
