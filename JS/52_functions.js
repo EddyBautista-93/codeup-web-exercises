@@ -142,6 +142,19 @@
 // }
 // console.log(isTrue(true));
 
+// function isTruthy(input){
+//     if (parseFloat(input)){
+//    return true;
+//     }else{
+//         return false;
+//     }
+// }
+// console.log(isTruthy(0));
+
+
+
+
+
 // Make a function named isFalse(boolean)
 
     // function isFalse(input) {
@@ -164,34 +177,184 @@
     // console.log(isVowel("a"));
     // console.log(isVowel("b"));
     // console.log(isVowel('e'));
-
+    //
 
 // Make a function named isConsonant(letter)
+// function containsVowel (input) {
+//     if (!isString(input)) {
+//         return false;
+//     }
+// ​
+//     var caseInsensitive = upperCase(input);
+//     if (caseInsensitive.indexOf("A") > -1 || caseInsensitive.indexOf("E") > -1 || caseInsensitive.indexOf("I") > -1 || caseInsensitive.indexOf("O") > -1 || caseInsensitive.indexOf("U") > -1) {
+//         return true;
+//     }else {
+//         return false;
+//
+
+
+
 // Make a function named isCapital(letter)
+// function isCapital(letter) {
+//         if(isString(input) && !isNumeric(input)){
+//             return input.toUpperCase();
+//         }else{
+//             return false;
+//         }
+//     }
+
+
 // Make a function named isLowerCase(letter)
+
+// function isLowerCase(input){
+//     if(if(isString(input) && !isNumeric(input)){
+//     return input.toLowerCase()
+// }
 // Make a function named hasLowerCase(string) that returns if a string has any lower cased
+
+
+
 // Make a function named isSpace(letter) that returns if a character is a space character
+// function isSpace(input){
+//     if(input === " "){
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+// console.log(isSpace(" "));
 // Make a function named isZero(number)
+
+// function isZero(input) {
+//     return input === 0;
+// }
+
 // Make a function named notZero(input) that returns true if the input is any number except for zero.
-//                                                                                                  Write a function named lowerCase(string)
+
+
+// function notZero(input){
+//     if(input === 0){
+//         return false;
+//     } else {
+//         return true
+//     }
+// }
+//
+//
+// // Write a function named lowerCase(string)
+// function lowerCase(string){
+//     return .toLowercase()
+// }
+
+
+
 // Write a function named double(n) that returns a number times two
+// function double(n) {
+//     return n * 2;
+// }
+
 // Write a function named triple(n) that returns a number times 3
+
+// function triple(n) {
+//     return n * 3;
+// }
+
 // Write a function named quadruple(n) that returns a number times 4
+
+// function quadruple(n) {
+//     return n * 4;
+// }
+
 // Write a function named half(n) that returns 1/2 of the provided input
+// function half(n) {
+//     return n / 2;
+// }
+// console.log(half(4));
 // Write a function named subtract(a, b) that returns a minus b
+
+// function subtract(a, b){
+//     return a - b;
+// }
+// console.log(subtract(2,1));
+
 // Write a function named multiply(a, b) that returns the product of a times b
+
+// function multiply(a, b){
+//     return a * b
+// }
+
+
 // Write a function named divide(a, b) that returns a divided by b
+//
+// function divide(a, b) {
+//     return a / b ;
+// }
+
 // Write a function named remainder(a, b) that returns the remainder after dividing a by b
+
+// function remainder(a, b){
+//     return a % b ;
+// }
+
 // Make a function named modulo(a, b) that returns the returns the remainder after dividing a by b
 // Write a function named cube(n) that returns n * n * n
+
+// function cube(n) {
+//     return 3 * 3 * 3;
+// }
+
+
 // Write a function named squareRoot(n) that returns the square root of the input
+//
+// function squareRoot(n) {
+//     return Math.sqrt(n);
+// }
+
 // Make a function named absoluteValue(number) that returns the absolute value of a number.
+//
+// function absoluteValue(n){
+//     return Math.abs(n);
+// }
+
+
 //     Make a function named isBlank(input) that determines if a given input is spaces, newline characters, or tabs.
+
+// function isBlank(n){
+// if(n === " "){
+    // return true;
+// }
+// }
+
 //     Write a function named cubeRoot(n) that returns the cube root of the input
-// Write a function named invertSign(number) that returns a negative version of a postive number, a positve version of negative, and false for all else.
+// function cubeRoot(n){
+//     return Math.cbrt(n);
+// }
+// Write a function named invertSign(number) kjm
+// that returns a negative version of a postive number, a positve version of negative, and false for all else.
+
+// function invertSign(n) {
+//     return ~n + 1;
+// }
+//
+// console.log(invertSign(5));
+
+
 // Write a function named degreesToRadians(number)
+
+
+
+
+
 // Write a function named radiansToDegrees(number)
+
+// function degreesToRadian(n){
+//     var pi = Math.PI;
+//     return degrees * (pi/180);
+// }
+
 // Make a function named trim(string) that removes empty spaces before and after the input.
+
+
 //     Make a function named notNot(input) that the negation of the negation of the input.
 //     Make a function named and(predicate1, predicate2) that returns the logical operation of AND
 // Make a function named or(predicate1, predicate2) that returns the logical operation of OR
