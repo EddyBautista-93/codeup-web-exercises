@@ -10,27 +10,45 @@
     "use strict";
 
     // ------------- PRACTICE 1
-    //TODO: Write a function, filterNumbers() that takes in an array of mixed data types and returns an array of only the numbers type in ascending order.
-
+    //TODO: Write a function, filterNumbers() that takes in an array of mixed data types and returns an array of only
+    // the numbers type in ascending order.
+//takes in a function in a array and returns a array of only number time-create a varaible for array
+    //return in ascending order-use .sort
 
     var testInput = ["fred", true, 5, 3];
 
-    function filterNumbers(input) {
-        var output = [];
-        for (var i = 0; i < input.length; i += 1) {
-            if (typeof input[i] === "number") {
-                output.push(input[i]);
-            }
-        }
-        output.sort();
-        return output;
-    }
+//
+// function filterNumbers(input){
+// var numberArray = [];
+// for (var i = 0; i < input.length; i += 1 ){
+//     if(typeof input[i] === "number"){
+//       numberArray.push(input[i]);
+//     }
+// }
+//     numberArray.sort();
+//     return numberArray;
+//
+// }
+//     console.log(filterNumbers(testInput));
 
-    console.log(filterNumbers(testInput));
+    // function filterNumbers(input) {
+    //     var output = [];
+    //     for (var i = 0; i < input.length; i += 1) {
+    //         if (typeof input[i] === "number") {
+    //             output.push(input[i]);
+    //         }
+    //     }
+    //     output.sort();
+    //     return output;
+    // }
+    //
+    // console.log(filterNumbers(testInput));
 
 
     // ------------- PRACTICE 2
     // TODO: Write a function, getOlder() that takes in array of dog objects and increases the value of the age properties by 1.
+    // takes in a array 0f dogs as a input
+    // increads age by 1 +=
 
     var dogs = [
         {
@@ -50,18 +68,40 @@
         }
     ];
 
-    function getOlder(dogs) {
-        for (var i = 0; i < dogs.length; i += 1) {
-            dogs[i].age += 1;
-        }
-        return dogs;
-    }
+   //
+   //  function getOlder(dogs) {
+   // for (var i = 0; i < dogs.length;i++ ){
+   //     dogs[i].age += 1;
+   // }
+   //  return dogs;
+   //  }
+   //  console.log(getOlder(dogs)) ;
+   //
+   //
 
-    console.log(getOlder(dogs));
+
+
+
+
+
+    //
+    // function getOlder(dogs) {
+    //     for (var i = 0; i < dogs.length; i += 1) {
+    //         dogs[i].age += 1;
+    //     }
+    //     return dogs;
+    // }
+    //
+    // console.log(getOlder(dogs));
 
 
     // ------------- PRACTICE 3
     //TODO: Write a function, washCars() that takes in a array of car objects and sets the boolean properties of isDirty to false
+    //takes in a array of objects
+    //change the boolean value
+    //
+    //
+
 
     var cars = [
         {
@@ -84,15 +124,31 @@
         }
     ];
 
+// const carYearFiltered = cars.filter((cars) > {
+//     return cars.year <= 2005
+// })
+//
 
-    function washCars(cars) {
-        cars.forEach(function(car) {
-            car.isDirty = false;
-        });
-        return cars;
-    }
 
-    console.log(washCars(cars));
+//
+// function washCars(cars) {
+//     cars.forEach(function (car) {
+//         car.isDirty = false;
+//     });
+//     return cars;
+// }
+//
+// console.log(washCars(cars));
+
+
+    // function washCars(cars) {
+    //     cars.forEach(function(car) {
+    //         car.isDirty = false;
+    //     });
+    //     return cars;
+    // }
+    //
+    // console.log(washCars(cars));
 
     // ------------- PRACTICE 4
     // TODO: Write a function, adminList() that takes in an array of user objects and returns a count of all admins based on the isAdmin property. Refactor to return an array of admin-only user emails. Refactor again to return an array of user objects that are admins.
@@ -136,19 +192,19 @@
     // }
 
 
-    // version 3
-    function adminList(users) {
-        var admins = [];
-        users.forEach(function(user) {
-            if (user.isAdmin) {
-                admins.push(user);
-            }
-        });
-        return admins;
-    }
+    // // version 3
+    // function adminList(users) {
+    //     var admins = [];
+    //     users.forEach(function(user) {
+    //         if (user.isAdmin) {
+    //             admins.push(user);
+    //         }
+    //     });
+    //     return admins;
+    // }
 
 
-    console.log(adminList(users));
+    // console.log(adminList(users));
 
     // ------------- PRACTICE 5
     //TODO: Create a function, makeSandwichObjects() that takes in two array of strings, breads and fillings and returns an array of sandwichObjects that contain properties for bread and filling and values correspond to the same order of the two passed in arrays. Assume the two array inputs are the same length.
@@ -168,18 +224,18 @@
         "tuna"
     ];
 
-    function makeSandwichObjects(breads, fillings) {
-        var output = [];
-        for (var i = 0; i < breads.length; i += 1) {
-            output.push({
-                bread: breads[i],
-                filling: fillings[i]
-            });
-        }
-        return output;
-    }
-
-    console.log(makeSandwichObjects(breads, fillings));
+    // function makeSandwichObjects(breads, fillings) {
+    //     var output = [];
+    //     for (var i = 0; i < breads.length; i += 1) {
+    //         output.push({
+    //             bread: breads[i],
+    //             filling: fillings[i]
+    //         });
+    //     }
+    //     return output;
+    // }
+    //
+    // console.log(makeSandwichObjects(breads, fillings));
 
 </script>
 
