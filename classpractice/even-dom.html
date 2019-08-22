@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<button id="btn1">Click Me!</button>
+<script>
+    'use strict';
+
+    // create a handler function
+    var listener = function (event) {
+        alert('You clicked the button!');
+    };
+
+    // register the listener to handle clicks on btn1
+    document.getElementById('btn1').addEventListener('click', listener, false);
+
+</script>
+</body>
+</html>
