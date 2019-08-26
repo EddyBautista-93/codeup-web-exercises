@@ -5,12 +5,38 @@
     <title>Title</title>
 </head>
 <body>
-<script src="../classpractice/as-2-review.js">
 
 
 
+<h1 id="codeup">Hello Codeup</h1>
 
+
+<script type="text/javascript" src="jquery-2.2.4.js"></script>
+<script>
+
+    $(document).ready(function() {
+
+    //     $('#codeup').dblclick(function() {
+    //         alert('h1 with id "codeup" was clicked');
+    //     });
+    //
+    //
+    //
+    //
+
+
+
+    $('#codeup').hover(
+        function(){
+        $(this).css('background-color', '#ff0');
+        },
+        function() {
+            $(this).css('background-color', '#fff')
+
+        }
+    );
+
+    });
 </script>
-
 </body>
 </html>
