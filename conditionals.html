@@ -5,6 +5,26 @@
     <title>Title</title>
 </head>
 <body>
-<script src="JS/conditionals.js"></script>
+<script>
+
+    function isVowel (str) {
+        var noCase = str.toLowerCase();
+        return noCase === 'a' || noCase === 'e'|| noCase === 'i' || noCase === 'o' || noCase === 'u';
+    }
+
+
+
+    function hasVowels(str) {
+        var letters = str.split('');
+        for ( var i = 0; i < letters.length; i++){
+            if(isVowel(letters[i] === true)){
+                return true
+            }
+        }
+    }
+
+    console.log(hasVowels("aeio"))
+
+</script>
 </body>
 </html>

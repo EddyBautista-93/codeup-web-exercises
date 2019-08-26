@@ -8,7 +8,12 @@
 
 
 
-<h1 id="codeup">Hello Codeup</h1>
+<!--<h1 id="codeup">Hello Codeup</h1>-->
+<p>Please type something into this form:</p>
+<form>
+    <input type="text" id="textfield" name="textfield" placeholder="Type Here"/>
+</form>
+
 
 
 <script type="text/javascript" src="jquery-2.2.4.js"></script>
@@ -24,17 +29,28 @@
     //
     //
 
+        $('#textfield').keydown(function() {
+            alert('A key was pushed down!');
+        });
 
 
-    $('#codeup').hover(
-        function(){
-        $(this).css('background-color', '#ff0');
-        },
-        function() {
-            $(this).css('background-color', '#fff')
 
-        }
-    );
+
+    // $('#codeup').hover(
+    //     function(){
+    //     $(this).css('background-color', '#ff0');
+    //     },
+    //     function() {
+    //         $(this).css('background-color', '#fff')
+    //
+    //     }
+    // );
+
+
+
+
+
+
 
     });
 </script>

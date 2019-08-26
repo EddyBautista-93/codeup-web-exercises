@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <style>
+
+        h1{
+            font-family: 'Press Start 2P', cursive;
+        }
+    </style>
+</head>
+<body>
+<h1>Konami Code</h1>
+
+
+<audio id="myAudio">
+    <source src="Brawl.mp3">
+</audio>
+
+<script src="JS/jquery-2.2.4.js"></script>
+
+<script>
+
+var allowedKeys = {
+    38: 'up',
+    40: 'down',
+    37: 'left',
+    39:'right',
+    66: 'b',
+    65: 'a',
+    13: 'enter'
+};
+
+
+var konamiCode = ['up','up','down','down','left','right','left', 'right', 'b','a','enter'];
+var konamiCodePostion = 0;
+$(document).keyup(function(e){
+    var key = allowedKeys[e.keyCode];
+    var requiredKey = konamiCode[konamiCodePostion];
+    if(key === requiredKey){
+        konamiCodePostion++
+    }
+    if(konamiCodePostion === konamiCode.length){
+        pizzaTime();
+        konamiCodePostion = 0;
+    }
+    });
+
+function pizzaTime(){
+    $('h1').html('Nerd').css('font-size','15em').css('margin', 'auto');
+    $('body').css({'background-image': 'url("img/tenor.gif")', 'background-size': 'auto'});
+    var audio = document.getElementById("myAudio");
+    audio.play();
+}
+
+    $(document).keyup(function(event){
+
+        console.log(event.keyCode);
+
+    });
+</script>
+</body>
+</html>
