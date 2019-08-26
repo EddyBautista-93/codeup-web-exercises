@@ -25,7 +25,17 @@ $(document).ready(function() {
 
     $('p').dblclick(function(){
         $(this).css('font-size', '18px')
-    })
+    });
+
+    $('li').hover(
+        function(){
+            $(this).css('background-color', '#ff0');
+        },
+        function() {
+            $(this).css('background-color', '#fff')
+
+        }
+    );
 
 });
 </script>
