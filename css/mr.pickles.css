@@ -1,0 +1,23 @@
+.top {
+    background-color: black;
+    color: white;
+    margin: 10px 10px 0px 10px;
+    width: 300px;
+    padding: 20px;
+    border-bottom: 5px solid grey;
+    font-size: small;
+}
+
+.bottom {
+    background-color: black;
+    color: white;
+    margin: 0px 10px 0px 10px;
+    width: 300px;
+    padding: 20px 30px 500px 10px;
+}
+
+.tab:hover {
+    background-color: grey;
+    position: relative;
+
+}
