@@ -78,10 +78,14 @@
 
     $('h1').click(function () {
         $('dd').toggleClass('invisible')
-    })
+    });
 $('button').click(function() {
-    $('li').css('background-color', 'yellow');
-});
+    $('li').each(function (i) {
+      if(i === 3 || i === 7 || i === 11)  {
+      $(this).css('background', 'yellow')
+      }
+    })
+})
 
 
 
