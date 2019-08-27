@@ -89,22 +89,22 @@
             <li>Bald cypress trees that line the Frio River live to be 600 years old:</li>
 
         </ul>
-        <button>Look at me</button>
+        <button class="parks">Look at me</button>
 
 
     </section>
 
     <section class="frame">
-        <div class="pic-1"></div>
+        <div class="pic-1"><button class="b-1">Click Me</button></div>
 
-        <div class="pic-2"></div>
+        <div class="pic-2"><button class="b-2">Click Me</button></div>
 
-        <div class="pic-3"></div>
+        <div class="pic-3"><button class="b-3">Click Me</button></div>
     </section>
 
-<script src="JS/jquery-2.2.4.js"></script>
+    <script src="JS/jquery-2.2.4.js"></script>
 
-<script>
+    <script>
 
 // $(document).keypress(function(e){
 //     if (e.key === 'f'){
@@ -120,7 +120,7 @@
 //         $(this).children().last().toggleClass('highlight')
 //     });
 
-$('button').click(function() {
+$('.parks').click(function() {
     $('li').each(function (i) {
       if(i === 3 || i === 7 || i === 11)  {
       $(this).css('background', 'yellow')
@@ -136,6 +136,10 @@ $('button').click(function() {
     $('li').click(function(){
       $(this).parents().children().first().css('color','blue')
     })
+
+    $('.b-1').click(function(){
+        $(this).parent().next()
+})
 
 
 
