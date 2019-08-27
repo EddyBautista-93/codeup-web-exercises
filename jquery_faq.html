@@ -8,6 +8,34 @@
         .invisible{
             visibility: hidden;
         }
+
+        .frame{
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .pic-1{
+            height: 300px;
+            width: 300px;
+            border: 5px solid greenyellow;
+            background-image: url("img/negative.jpeg");
+        }
+
+        .pic-2{
+            height: 300px;
+            width: 300px;
+            border: 5px solid greenyellow;
+            background-image: url("img/pizzatime.gif");
+        }
+
+        .pic-3{
+            height: 300px;
+            width: 300px;
+            border: 5px solid greenyellow;
+            background-image: url("img/tenor.gif");
+        }
+
+
     </style>
 </head>
 <body>
@@ -38,7 +66,7 @@
     </section>
     <section>
         <h3>Yosemite</h3>
-        <ul>
+        <ul id="yosemite">
             <li>WHEN THE TIMING IS RIGHT, ONE OF THE PARK’S WATERFALLS GLOWS.</li>
             <li>IT IS REVERED AS THE BIRTH PLACE OF ROCK CLIMBING FOR SPORT.</li>
             <li>BUFFALO SOLDIERS WERE SOME OF THE PARK’S FIRST PROTECTORS</li>
@@ -46,7 +74,7 @@
         </ul>
 
         <h3>Sequoia</h3>
-        <ul>
+        <ul id="sequoia">
             <li>The first inhabitants known to have inhabited the area now designated as Sequoia National Park were the Monache Indians.</li>
             <li>Much of the population of Native American people that lived in the region when the European settlers arrived was wiped out because of smallpox.</li>
             <li>The most massive tree in the world - the General Sherman Tree - is located in the Giant Forest in Sequoia National Park.</li>
@@ -54,7 +82,7 @@
         </ul>
 
         <h3>Garder</h3>
-        <ul>
+        <ul id="garder">
             <li>The park's rock formations were created in the Cretaceous age, which ended around 65 million years ago:</li>
             <li>Before tubers flocked to the river, natives camped in the area ... 12,000 years ago:</li>
             <li>Garner is one of 31 existing Texas parks built by the Civilian Conservation Corps:</li>
@@ -64,6 +92,14 @@
         <button>Look at me</button>
 
 
+    </section>
+
+    <section class="frame">
+        <div class="pic-1"></div>
+
+        <div class="pic-2"></div>
+
+        <div class="pic-3"></div>
     </section>
 
 <script src="JS/jquery-2.2.4.js"></script>
@@ -79,15 +115,27 @@
     $('h1').click(function () {
         $('dd').toggleClass('invisible')
     });
+// ('.highlight-Last').click(function() {
+//     $('ul').each(function() {
+//         $(this).children().last().toggleClass('highlight')
+//     });
+
 $('button').click(function() {
     $('li').each(function (i) {
       if(i === 3 || i === 7 || i === 11)  {
       $(this).css('background', 'yellow')
       }
     })
-})
+});
 
+    $('h3').click(function(){
+        $(this).next().children().css('font-weight', 'bold').css('font-size', '20px')
 
+    });
+
+    $('li').click(function(){
+      $(this).parents().children().first().css('color','blue')
+    })
 
 
 
