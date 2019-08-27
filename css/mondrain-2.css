@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    text-align: center 2;
+}
+main {
+    margin-top: 2em;
+    background-color:black;
+    display: inline-grid;
+    height: 500px;
+    width: 700px;
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-gap: 5px;
+    border: 10px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2), 0 0 20px 0 rgba(0, 0, 0, 0.19);
+}
+.one {
+    grid-area: 1/ 1 /2 /3;
+    background: rgb(218	227	224	);
+}
+.two {
+    grid-area: 1/ 3/ 2/ 6;
+    background: rgb(248	243	224	);
+}
+.three {
+    grid-area: 1/ 6/ 2/ 8;
+    background: rgb(251	209	104	);
+}
+.four {
+    grid-area: 1/ 8/ 7/ 9;
+    background: rgb(240	242	227	);
+}
+.five {
+    grid-area: 1/ 9/ 3/ 10;
+    background: rgb(240	242	227	);
+}
+.six {
+    grid-area: 1/ 10/ -6 /12;
+    background: rgb(251	209	104	);
+}
+.seven {
+    grid-area: 2/ 1/ span 4/ span 4;
+    background: rgb(222	49	35	);
+}
+.eight {
+    grid-area: 2/ 5 /5 /6;
+    background: rgb(218	227	224	);
+}
+.nine {
+    grid-area: 2/ 6/ 4/ 7;
+    background: rgb(248	243	224	);
+}
+.ten {
+    grid-area: 2/ 7/ 4/ 8;
+    background: rgb(248	243	224	);
+}
+.eleven {
+    grid-area: 4/ 6/ 5/ 8;
+    background: rgb(185	186	187	);
+}
+.twelve {
+    grid-area: 5/ 5/ 6/ 7;
+    background: rgb(218	227	224	);
+}
+.thirteen {
+    grid-area: 5/ 7/ -1/ 8;
+    background: rgb(222	49	35	);
+}
+.fourteen {
+    grid-area: 6/ 5/ 7/ 7;
+    background: rgb(21	12	14	);
+}
+.fifteen {
+    grid-area: 7/ 5/ 8/ 7;
+    background: rgb(28	27	27	);
+}
+.sixteen {
+    grid-area: 6/ 3/ 8/ span 2;
+    background: rgb(218	227	224	);
+}
+.seventeen {
+    grid-area: 6/ 1/ span 2/ span 2;
+    background: rgb(36	26	165	);
+}
+.eighteen {
+    grid-area: -6 / 9/ span 2/ span 2;
+    background: rgb(21	12	14	);
+}
+.nineteen {
+    grid-area: -6/ 11/ span 3/ span 1;
+    background: rgb(251	209	104	);
+}
+.twenty {
+    grid-area: -4/ 9/ span 1/ span 2;
+    background: rgb(185	186	187	);
+}
+.twentyone {
+    grid-area: 6/ -4/ span 1/ span 3;
+    background: rgb(21	12	14	);
+}
+.twentytwo {
+    grid-area: -2/ 8/ span 1/ span 4;
+    background: rgb(218	227	224	);
+}
