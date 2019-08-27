@@ -41,7 +41,11 @@
 
 <script>
 
-
+$(document).keypress(function(e){
+    if (e.key === 'f'){
+        $('dd').toggleClass('invisible')
+    }
+})
 
 
 
