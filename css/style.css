@@ -1,0 +1,62 @@
+/*changes headings*/
+header, h2, thead {
+    color: rgba(33, 126, 106, 0.5);
+    text-decoration:underline;
+    background-color: ghostwhite;
+    border: 2px solid;
+}
+/*changes background and body*/
+body {
+    background: rgba(255, 136, 65, 0.3);
+    background-image: url(../img/keyboard.jpeg);
+    background-position: 50px 50px;
+    background-position:center;
+    background-repeat: no-repeat;
+    font-family: "Andale Mono";
+    text-align: center;
+}
+/*changes list*/
+ul {
+    list-style:square;
+    color:ghostwhite;
+    background: rgba(33, 126, 106, 0.5);
+    list-style-position: inside;
+}
+ol{
+    list-style:upper-roman;
+    color:ghostwhite;
+    background: rgba(33, 126, 106, 0.5);
+    list-style-position:inside;
+}
+/*changes header and main*/
+.center {
+    margin: 50px auto;
+    width: 500px;
+    padding: 10px;
+}
+/*changes table*/
+td {
+    color:ghostwhite;
+    background: rgba(33, 126, 106, 0.5);
+}
+tr {
+    padding:5px;
+    font-size: 30px;
+}
+/*changes link*/
+a:visited {
+    color:red;
+}
+a:hover {
+    font-size: small;
+}
+
+img:hover {
+    opacity: .8;
+    border: 1px solid;
+    box-shadow: 10px 10px 5px grey;
+}
+
+.pointer {
+    cursor: pointer;
+}
