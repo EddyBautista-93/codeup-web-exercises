@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Manipulation Warm Up</title>
+    <style>
+        body {
+            background: #999;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div>
+    <h1>The color is <span id="color">undefined</span></h1>
+    <form id="target">
+        <div class="form-group">
+            <label for="color-spec"></label>
+            <input id="color-spec" type="text" placeholder="Please enter a color">
+            <button id="update-color-btn" type="button">Update color</button>
+        </div>
+    </form>
+    <br>
+    <button id="disappear-btn" type="button">Disappear</button>
+</div>
+
+<h1 class="hidden">This text will never disappear.</h1>
+
+
+<script
+        src="https://code.jquery.com/jquery-2.2.4.js"
+        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+        crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+
+        $('#update-color-btn').click(function() {
+            var newColor = $('#color-spec').val();
+            $('#color').html(newColor).css('color', newColor);
+        });
+
+
+        $('#disappear-btn').click(function(){
+            var $dbtn = $(this);
+            $('#disappear-btn').parent().css('display','none');
+        })
+
+    })
+
+
+
+
+</script>
+</body>
+</html>
