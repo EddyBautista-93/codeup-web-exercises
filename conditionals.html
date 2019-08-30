@@ -7,23 +7,36 @@
 <body>
 <script>
 
-    function isVowel (str) {
-        var noCase = str.toLowerCase();
-        return noCase === 'a' || noCase === 'e'|| noCase === 'i' || noCase === 'o' || noCase === 'u';
-    }
+    // function isVowel (str) {
+    //     var noCase = str.toLowerCase();
+    //     return noCase === 'a' || noCase === 'e'|| noCase === 'i' || noCase === 'o' || noCase === 'u';
+    // }
+    //
+    //
+    //
+    // function hasVowels(str) {
+    //     var letters = str.split('');
+    //     for ( var i = 0; i < letters.length; i++){
+    //         if(isVowel(letters[i] === true)){
+    //             return true
+    //         }
+    //     }
+    // }
+    //
+    // console.log(hasVowels("aeio"))
 
-
-
-    function hasVowels(str) {
-        var letters = str.split('');
-        for ( var i = 0; i < letters.length; i++){
-            if(isVowel(letters[i] === true)){
-                return true
-            }
+    function isMultipleOfThree(input){
+        if(input % 3 === 0){
+            return true
+        } else {
+            return false
         }
     }
-
-    console.log(hasVowels("aeio"))
+    console.log(isMultipleOfThree(3), true);
+    console.log(isMultipleOfThree(15), true);
+    console.log(isMultipleOfThree(9), true);
+    console.log(isMultipleOfThree(4), false);
+    console.log(isMultipleOfThree(10), false);
 
 </script>
 </body>

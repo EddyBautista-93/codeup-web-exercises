@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>San Antonio Weather</title>
+    <link rel="stylesheet" href="css/weather-map.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+<h1>Weather Application</h1>
+
+<h3 id="location">San Antonio</h3>
+
+<section id="container" class="d-flex flex-wrap justify-content-around">
+
+
+</section>
+
+
+
+<script src="JS/jquery-2.2.4.js"></script>
+<script src="JS/keys.js"></script>
+<script>
+
+    $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+ darkSkyKey +"/29.4241,-98.4936").done(function(days) {
+        console.log(days)
+    });
+
+
+$.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+ darkSkyKey +"/29.4241,-98.4936").done(function(days) {
+
+var dayOneData = "";
+
+
+        for(var i = 0; i < 3; i++){
+                    dayOneData+=          "<div>";
+                    dayOneData+=          "<ul>";
+                    dayOneData+=           "<li>"+ days.daily.data[i].apparentTemperatureLow +"/" + days.daily.data[i].apparentTemperatureHigh+ "</li>";
+                    dayOneData+=           "<li>"+ days.daily.data[i].icon + "</li>";
+                    dayOneData+=          " <li>"+"<bold>Weather:</bold>"+ days.daily.data[i].summary + "</li>";
+                    dayOneData+=           "<li>"+"<bold>Humidity:</bold>"+ days.daily.data[i].humidity+ "</li>";
+                    dayOneData+=           "<li>"+"<bold>Wind:</bold>"+ days.daily.data[i].windSpeed + "</li>";
+                    dayOneData+=          " <li>"+"<bold>pressure:</bold>"+ days.daily.data[i].pressure + "</li>";
+                    dayOneData+=           "</ul>";
+                    dayOneData+=          "</div>";
+        }
+
+    $('#container').html(dayOneData)
+
+
+
+
+});
+
+var weatherconArray
+
+</script>
+</body>
+</html>

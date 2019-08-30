@@ -1,0 +1,19 @@
+body{
+    font-family: 'Oswald', sans-serif;
+    background-color: #ADDCFB ;
+
+}
+
+.container {
+    border: 1px solid black;
+    background-color: white;
+}
+div {
+    border: 1px solid black;
+    background-color: white;
+}
+
+ul{
+    list-style: none;
+
+}
