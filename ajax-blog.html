@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <meta charset="UTF-8">
+    <title>ajax Blog</title>
+</head>
+<body>
+<div id="post"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<script>
+
+
+      $.ajax('data/blog.json').done(function (data) {
+          $('#post').html(addBlog(data))
+
+      });
+
+          function addBlog(data){
+
+              var blogArticle = "";
+              $('#post').html(blogArticle)
+              data.forEach(function (blog) {
+
+            blogArticle += "<h1>" + blog.title + "</h1>";
+            blogArticle += "<hr>";
+            blogArticle += "<p>" + blog.content + "</p>";
+            blogArticle += "<p>" + blog.categories + "</p>";
+            blogArticle += "<blockquote>" + blog.date + "</blockquote>";
+
+
+              });
+              return blogArticle;
+          }
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

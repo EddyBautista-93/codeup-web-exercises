@@ -5,42 +5,27 @@
     <title>Title</title>
     <style>
 
+
         .invisible{
             visibility: hidden;
         }
-
-        .frame{
-            display: flex;
-            justify-content: space-evenly;
+        h2{
+            display: none;
         }
-
-        .pic-1{
-            height: 300px;
-            width: 300px;
-            border: 5px solid greenyellow;
-            background-image: url("img/negative.jpeg");
-        }
-
-        .pic-2{
-            height: 300px;
-            width: 300px;
-            border: 5px solid greenyellow;
-            background-image: url("img/pizzatime.gif");
-        }
-
-        .pic-3{
-            height: 300px;
-            width: 300px;
-            border: 5px solid greenyellow;
-            background-image: url("img/tenor.gif");
-        }
-
 
     </style>
 </head>
 <body>
     <section>
-        <h1>YellowStone </h1>
+        <div class="fade">
+            <h2>Would you like to sign up for our news letter</h2>
+            <p class="xtra">X</p>
+        </div>
+
+
+
+
+        <h2>YellowStone </h2>
     <dl>
         <dt>How do I get there?</dt>
         <dd class="invisible">Three of the five entrances to Yellowstone National Park are located in Montana’s Yellowstone Country; they can be accessed through West Yellowstone, Gardiner and Cooke City, MT</dd>
@@ -94,14 +79,6 @@
 
     </section>
 
-    <section class="frame">
-        <div class="pic-1"><button class="b-1">Click Me</button></div>
-
-        <div class="pic-2"><button class="b-2">Click Me</button></div>
-
-        <div class="pic-3"><button class="b-3">Click Me</button></div>
-    </section>
-
     <script src="JS/jquery-2.2.4.js"></script>
 
     <script>
@@ -128,10 +105,10 @@ $('.parks').click(function() {
     })
 });
 
-    $('h3').click(function(){
-        $(this).next().children().css('font-weight', 'bold').css('font-size', '20px')
-
-    });
+    // $('h3').click(function(){
+    //     $(this).next().children().css('font-weight', 'bold').css('font-size', '20px')
+    //
+    // });
 
     $('li').click(function(){
       $(this).parents().children().first().css('color','blue')
@@ -139,7 +116,31 @@ $('.parks').click(function() {
 
     $('.b-1').click(function(){
         $(this).parent().next()
-})
+});
+        $('.xtra').click(function(){
+            $(this).parent().hide()
+        });
+
+
+        $('ul').hide();
+
+        $('h3').click(function(){
+            $('ul').slideToggle()
+        });
+
+        $('h2').fadeIn(8000);
+
+
+        // $('#fade').fadeIn({
+        //     duration:"8000",
+            // text:'<h2>Sign up for our newsletter</h2>'
+        // })
+// $("#fade").fadeOut(function() {
+//     $(this).text("World")
+// }).fadeIn();
+
+
+
 
 
 
