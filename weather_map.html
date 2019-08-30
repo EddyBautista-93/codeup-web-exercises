@@ -5,7 +5,9 @@
     <title>San Antonio Weather</title>
     <link rel="stylesheet" href="css/weather-map.css">
     <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+
+
 
 </head>
 <body>
@@ -13,16 +15,27 @@
 
 <h3 id="location">San Antonio</h3>
 
-<section id="container" class="d-flex flex-wrap justify-content-around">
+<section id="container">
 
 
 </section>
+
+<!--<article id='map'></article>-->
 
 
 
 <script src="JS/jquery-2.2.4.js"></script>
 <script src="JS/keys.js"></script>
 <script>
+
+    // mapboxgl.accessToken = mapboxToken;
+    // var map = new mapboxgl.Map({
+    //     container: 'map',
+    //     style: 'mapbox://styles/mapbox/streets-v9',
+    //     zoom: 10,
+    //     center: [-98.4916, 29.4252]
+    // });
+
 
     $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+ darkSkyKey +"/29.4241,-98.4936").done(function(days) {
         console.log(days)
@@ -38,7 +51,7 @@ var dayOneData = "";
                     dayOneData+=          "<div>";
                     dayOneData+=          "<ul>";
                     dayOneData+=           "<li>"+ days.daily.data[i].apparentTemperatureLow +"/" + days.daily.data[i].apparentTemperatureHigh+ "</li>";
-                    dayOneData+=           "<li>"+ days.daily.data[i].icon + "</li>";
+                    dayOneData+=           "<img >"+  + "</li>";
                     dayOneData+=          " <li>"+"<bold>Weather:</bold>"+ days.daily.data[i].summary + "</li>";
                     dayOneData+=           "<li>"+"<bold>Humidity:</bold>"+ days.daily.data[i].humidity+ "</li>";
                     dayOneData+=           "<li>"+"<bold>Wind:</bold>"+ days.daily.data[i].windSpeed + "</li>";
@@ -53,8 +66,53 @@ var dayOneData = "";
 
 
 });
+var iconArray = [{
+    link: "url(icons/SVG/Sun.svg)",
+    name: "clear-day"
+},
+    {
+        link: "url(icons/SVG/Moon-Waxing-Crescent.svg)",
+        name: "clear-night"
+    },
+    {
+        link: "url(icons/SVG/Cloud-Rain.svg)",
+        name: "rain"
+    },
+    {
+        link: "url(icons/SVG/Cloud-Snow-Sun)",
+        name: "snow"
+    },
+    {
+        link: "url(icons/SVG/Cloud-Snow-Alt.svg)",
+        name: "sleet"
+    },
+    {
+        link: "url(icons/SVG/Wing.svg)",
+        name: "wind"
+    },
+    {
+        link: "url(icons/SVG/Cloud-Fog.svg)",
+        name: "fog"
+    },
+    {
+        link: "url(icons/SVG/)",
+        name: "cloudy"
+    },
+    {
+        link: "url(icons/SVG/Cloud-Sun.svg)",
+        name: "partly-cloudy-day"
+    },
+    {
+        link: "url(icons/SVG/CLoud-Moon.svg)",
+        name: "party-cloudy-night"
+}]
 
-var weatherconArray
+
+function weatherIcon(icon, apiIcon){
+   if(iconArray[i].name === apiIcon){
+       return iconArray[i].link
+   }
+    }
 
 </script>
 </body>
