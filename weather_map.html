@@ -36,18 +36,17 @@
 
 </div>
 
-<form method="POST" action="https://request-inspector.glitch.me/">
+<div>
+    <h1>Enter Longitude and Latitude</h1>
+    <form>
+        <div class="form-group">
+            <label for="lat-long"></label>
+            <input id="lat-long" type="text" placeholder="Enter Latitude and Longitude">
+            <button id="update-lat-long" type="button">Update</button>
+        </div>
+    </form>
 
-    <label for="latitude">Latitude</label>
-    <input id="latitude" name="latitude" type="text">
-    <br>
-
-    <label for="longitude">longitude</label>
-    <input id="longitude" name="longitude" type="text">
-    <br>
-
-    <input type="submit">
-</form>
+</div>
 
 
 <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.min.js'></script>
