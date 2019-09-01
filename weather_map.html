@@ -27,33 +27,35 @@
 
 </head>
 <body>
-<h1>Weather Application</h1>
+<h1 class="text-center">Weather For <span id="location"> San Antonio, Texas</span></h1>
+
 
 <h3>San Antonio</h3>
 
 <div id="container" class="card-deck mb-3 text-center">
 
-
 </div>
+<!--step 5 text input not needed going further-->
+<!--<div>-->
+<!--    <h1>Enter Longitude and Latitude</h1>-->
+<!--    <form>-->
+<!--        <div class="form-group">-->
+<!--            <label for="latitude"></label>-->
+<!--            <input id="latitude" type="text" placeholder="Enter Latitude"><br>-->
+<!--            <label for="longitude"></label>-->
+<!--            <input id="longitude" type="text" placeholder="EnterLongitude">-->
+<!--            <button id="update-lat-long" type="button">Update</button>-->
+<!--        </div>-->
+<!--    </form>-->
 
-<div>
-    <h1>Enter Longitude and Latitude</h1>
-    <form>
-        <div class="form-group">
-            <label for="latitude"></label>
-            <input id="latitude" type="text" placeholder="Enter Latitude"><br>
-            <label for="longitude"></label>
-            <input id="longitude" type="text" placeholder="EnterLongitude">
-            <button id="update-lat-long" type="button">Update</button>
-        </div>
-    </form>
+<!--</div>-->
 
-</div>
+<div id='map'></div>
+<pre id='coordinates' class='coordinates'></pre>
 
 
 <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.min.js'></script>
 <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css' type='text/css' />
-<div id='map'></div>
 
 
 
@@ -61,12 +63,16 @@
 <script src="JS/keys.js"></script>
 <script>
 
+    var lat = 29.424;
+    var long = -98.4936;
+
     // added mapbox
     mapboxgl.accessToken = mapboxToken;
+    var coordinates = document.getElementById('coordinates');
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 10,
+        zoom: 5,
         center: [-98.4916, 29.4252]
     });
 
@@ -79,23 +85,32 @@
     var marker = new mapboxgl.Marker({
         draggable: true
     })
-        .setLngLat([-98.4951, 29.4246])
+        .setLngLat([long, lat])
         .addTo(map);
 
+    function onDragEnd() {
+        var lngLat = marker.getLngLat();
+
+       var lngApi =lngLat.lng;
+        var latApi =lngLat.lat;
+    }
+    marker.on('dragend', onDragEnd);
 
 
-    // changing long-latitude
 
 
 
-    var lat = 29.424;
-    var long = -98.4936;
-    $('button').click(function () {
-        lat = $('#latitude').val();
-        long = $('#longitude').val();
-        updateWeather();
-    });
-    updateWeather();
+
+
+
+
+    // changing long-latitude from text input
+    // $('button').click(function () {
+    //     lat = $('#latitude').val();
+    //     long = $('#longitude').val();
+    //     updateWeather();
+    // });
+    // updateWeather();
 
 
     // function to add 3 day forcast
