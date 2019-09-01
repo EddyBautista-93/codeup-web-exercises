@@ -20,7 +20,7 @@
         #map { top:0;
             bottom:0;
             width: 100%;
-            height: 700px; }
+            height: 400px; }
 
     </style>
 
@@ -40,8 +40,10 @@
     <h1>Enter Longitude and Latitude</h1>
     <form>
         <div class="form-group">
-            <label for="lat-long"></label>
-            <input id="lat-long" type="text" placeholder="Enter Latitude and Longitude">
+            <label for="lat"></label>
+            <input id="lat" type="text" placeholder="Enter Latitude"><br>
+            <label for="long"></label>
+            <input id="long" type="text" placeholder="EnterLongitude">
             <button id="update-lat-long" type="button">Update</button>
         </div>
     </form>
@@ -58,6 +60,8 @@
 <script src="JS/jquery-2.2.4.js"></script>
 <script src="JS/keys.js"></script>
 <script>
+
+    // mapbox js
     mapboxgl.accessToken = mapboxToken;
     var map = new mapboxgl.Map({
         container: 'map',
@@ -66,12 +70,32 @@
         center: [-98.4916, 29.4252]
     });
 
-
     map.addControl(new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
         mapboxgl: mapboxgl
     }));
-$.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+ darkSkyKey +"/29.4241,-98.4936").done(function(days) {
+
+    // page
+
+    var lat = $('#lat').val();
+    var long = $('#long').val();
+
+    var longitude = 29.4252;
+    var latitude = -98.4916;
+
+    $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+ darkSkyKey +"/"+longitude+","+latitude).done(function(days) {
+
+        function changeLocation(long,lat) {
+            var longitude = "";
+
+        }
+    });
+
+
+
+
+    // function to add 3 day forcast
+$.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+ darkSkyKey +"/"+longitude+","+latitude).done(function(days) {
 
 var dayOneData = "";
 
@@ -146,6 +170,14 @@ function weatherIcon(icon, apiIcon) {
         }
     }
 }
+
+    // $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+ darkSkyKey +"/29.4241,-98.4936").done(function(days) {
+    //
+    //
+    // });
+
+
+    
 
 </script>
 </body>
