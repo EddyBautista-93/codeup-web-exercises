@@ -40,10 +40,10 @@
     <h1>Enter Longitude and Latitude</h1>
     <form>
         <div class="form-group">
-            <label for="lat"></label>
-            <input id="lat" type="text" placeholder="Enter Latitude"><br>
-            <label for="long"></label>
-            <input id="long" type="text" placeholder="EnterLongitude">
+            <label for="latitude"></label>
+            <input id="latitude" type="text" placeholder="Enter Latitude"><br>
+            <label for="longitude"></label>
+            <input id="longitude" type="text" placeholder="EnterLongitude">
             <button id="update-lat-long" type="button">Update</button>
         </div>
     </form>
@@ -61,7 +61,7 @@
 <script src="JS/keys.js"></script>
 <script>
 
-    // mapbox js
+    // added mapbox
     mapboxgl.accessToken = mapboxToken;
     var map = new mapboxgl.Map({
         container: 'map',
@@ -75,49 +75,53 @@
         mapboxgl: mapboxgl
     }));
 
-    // page
 
-    var lat = $('#lat').val();
-    var long = $('#long').val();
+    var marker = new mapboxgl.Marker({
+        draggable: true
+    })
+        .setLngLat([-98.4951, 29.4246])
+        .addTo(map);
 
-    var longitude = 29.4252;
-    var latitude = -98.4916;
 
-    $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+ darkSkyKey +"/"+longitude+","+latitude).done(function(days) {
 
-        function changeLocation(long,lat) {
-            var longitude = "";
+    // changing long-latitude
 
-        }
+
+
+    var lat = 29.424;
+    var long = -98.4936;
+    $('button').click(function () {
+        lat = $('#latitude').val();
+        long = $('#longitude').val();
+        updateWeather();
     });
-
-
+    updateWeather();
 
 
     // function to add 3 day forcast
-$.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+ darkSkyKey +"/"+longitude+","+latitude).done(function(days) {
+    function updateWeather() {
+        $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/" + lat + "," + long).done(function (days) {
 
-var dayOneData = "";
-
-
-        for(var i = 0; i < 3; i++){
-                    dayOneData+=          '<div class="card" >';
-                    dayOneData+=          "<ul>";
-                    dayOneData+=           "<li>"+ days.daily.data[i].apparentTemperatureLow +"/" + days.daily.data[i].apparentTemperatureHigh+ "</li>";
-                    dayOneData+=           "<img src='" + weatherIcon(iconArray, days.daily.data[i].icon) + "'>";
-                    dayOneData+=          " <li>"+"<bold>Weather:</bold>"+ days.daily.data[i].summary + "</li>";
-                    dayOneData+=           "<li>"+"<bold>Humidity:</bold>"+ days.daily.data[i].humidity+ "</li>";
-                    dayOneData+=           "<li>"+"<bold>Wind:</bold>"+ days.daily.data[i].windSpeed + "</li>";
-                    dayOneData+=          " <li>"+"<bold>pressure:</bold>"+ days.daily.data[i].pressure + "</li>";
-                    dayOneData+=           "</ul>";
-                    dayOneData+=          "</div>";
-        }
-
-    $('#container').html(dayOneData)
+            var dayOneData = "";
 
 
-});
+            for (var i = 0; i < 3; i++) {
+                dayOneData += '<div class="card" >';
+                dayOneData += "<ul>";
+                dayOneData += "<li>" + days.daily.data[i].apparentTemperatureLow + "/" + days.daily.data[i].apparentTemperatureHigh + "</li>";
+                dayOneData += "<img src='" + weatherIcon(iconArray, days.daily.data[i].icon) + "'>";
+                dayOneData += " <li>" + "<bold>Weather:</bold>" + days.daily.data[i].summary + "</li>";
+                dayOneData += "<li>" + "<bold>Humidity:</bold>" + days.daily.data[i].humidity + "</li>";
+                dayOneData += "<li>" + "<bold>Wind:</bold>" + days.daily.data[i].windSpeed + "</li>";
+                dayOneData += " <li>" + "<bold>pressure:</bold>" + days.daily.data[i].pressure + "</li>";
+                dayOneData += "</ul>";
+                dayOneData += "</div>";
+            }
 
+            $('#container').html(dayOneData)
+
+        });
+    }
 
 // icon array
 var iconArray = [{
