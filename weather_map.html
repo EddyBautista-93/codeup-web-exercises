@@ -35,20 +35,20 @@
 <div id="container" class="card-deck mb-3 text-center">
 
 </div>
-<!--step 5 text input not needed going further-->
-<!--<div>-->
-<!--    <h1>Enter Longitude and Latitude</h1>-->
-<!--    <form>-->
-<!--        <div class="form-group">-->
-<!--            <label for="latitude"></label>-->
-<!--            <input id="latitude" type="text" placeholder="Enter Latitude"><br>-->
-<!--            <label for="longitude"></label>-->
-<!--            <input id="longitude" type="text" placeholder="EnterLongitude">-->
-<!--            <button id="update-lat-long" type="button">Update</button>-->
-<!--        </div>-->
-<!--    </form>-->
 
-<!--</div>-->
+<div>
+    <h1>Enter Longitude and Latitude</h1>
+    <form>
+        <div class="form-group">
+            <label for="latitude"></label>
+            <input id="latitude" type="text" placeholder="Enter Latitude"><br>
+            <label for="longitude"></label>
+            <input id="longitude" type="text" placeholder="EnterLongitude">
+            <button id="update-lat-long" type="button">Update</button>
+        </div>
+    </form>
+
+</div>
 
 <div id='map'></div>
 <pre id='coordinates' class='coordinates'></pre>
@@ -63,9 +63,6 @@
 <script src="JS/keys.js"></script>
 <script>
 
-    var lat = 29.424;
-    var long = -98.4936;
-
     // added mapbox
     mapboxgl.accessToken = mapboxToken;
     var coordinates = document.getElementById('coordinates');
@@ -76,6 +73,8 @@
         center: [-98.4916, 29.4252]
     });
 
+    var lat = 29.424;
+    var long = -98.4936;
     map.addControl(new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
         mapboxgl: mapboxgl
@@ -88,34 +87,15 @@
         .setLngLat([long, lat])
         .addTo(map);
 
+
     function onDragEnd() {
         var lngLat = marker.getLngLat();
 
-       var lngApi =lngLat.lng;
-        var latApi =lngLat.lat;
-    }
-    marker.on('dragend', onDragEnd);
+        var i = lngLat.lng;
+         var j = lngLat.lat;
 
 
-
-
-
-
-
-
-
-    // changing long-latitude from text input
-    // $('button').click(function () {
-    //     lat = $('#latitude').val();
-    //     long = $('#longitude').val();
-    //     updateWeather();
-    // });
-    // updateWeather();
-
-
-    // function to add 3 day forcast
-    function updateWeather() {
-        $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/" + lat + "," + long).done(function (days) {
+        $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/" + j + "," + i).done(function (days) {
 
             var dayOneData = "";
 
@@ -137,6 +117,54 @@
 
         });
     }
+
+    marker.on('dragend', onDragEnd);
+    onDragEnd();
+
+
+
+
+
+
+
+
+
+    // changing long-latitude
+
+
+    //
+    // $('button').click(function () {
+    //     lat = $('#latitude').val();
+    //     long = $('#longitude').val();
+    //     updateWeather();
+    // });
+    // updateWeather();
+
+
+    // function to add 3 day forcast
+
+        // $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/" + lat + "," + long).done(function (days) {
+        //
+        //     var dayOneData = "";
+        //
+        //
+        //     for (var i = 0; i < 3; i++) {
+        //         dayOneData += '<div class="card" >';
+        //         dayOneData += "<ul>";
+        //         dayOneData += "<li>" + days.daily.data[i].apparentTemperatureLow + "/" + days.daily.data[i].apparentTemperatureHigh + "</li>";
+        //         dayOneData += "<img src='" + weatherIcon(iconArray, days.daily.data[i].icon) + "'>";
+        //         dayOneData += " <li>" + "<bold>Weather:</bold>" + days.daily.data[i].summary + "</li>";
+        //         dayOneData += "<li>" + "<bold>Humidity:</bold>" + days.daily.data[i].humidity + "</li>";
+        //         dayOneData += "<li>" + "<bold>Wind:</bold>" + days.daily.data[i].windSpeed + "</li>";
+        //         dayOneData += " <li>" + "<bold>pressure:</bold>" + days.daily.data[i].pressure + "</li>";
+        //         dayOneData += "</ul>";
+        //         dayOneData += "</div>";
+        //     }
+        //
+        //     $('#container').html(dayOneData)
+        //
+        // });
+
 
 // icon array
 var iconArray = [{
