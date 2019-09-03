@@ -36,19 +36,19 @@
 
 </div>
 
-<div>
-    <h1>Enter Longitude and Latitude</h1>
-    <form>
-        <div class="form-group">
-            <label for="latitude"></label>
-            <input id="latitude" type="text" placeholder="Enter Latitude"><br>
-            <label for="longitude"></label>
-            <input id="longitude" type="text" placeholder="EnterLongitude">
-            <button id="update-lat-long" type="button">Update</button>
-        </div>
-    </form>
+<!--<div>-->
+<!--    <h1>Enter Longitude and Latitude</h1>-->
+<!--    <form>-->
+<!--        <div class="form-group">-->
+<!--            <label for="latitude"></label>-->
+<!--            <input id="latitude" type="text" placeholder="Enter Latitude"><br>-->
+<!--            <label for="longitude"></label>-->
+<!--            <input id="longitude" type="text" placeholder="EnterLongitude">-->
+<!--            <button id="update-lat-long" type="button">Update</button>-->
+<!--        </div>-->
+<!--    </form>-->
 
-</div>
+<!--</div>-->
 
 <div id='map'></div>
 <pre id='coordinates' class='coordinates'></pre>
@@ -77,15 +77,32 @@
     var long = -98.4936;
     map.addControl(new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
-        mapboxgl: mapboxgl
+        mapboxgl: mapboxgl,
+        marker:false
     }));
 
 
     var marker = new mapboxgl.Marker({
         draggable: true
+
     })
         .setLngLat([long, lat])
         .addTo(map);
+
+
+
+    map.on("moveend", function() {
+        marker.setLngLat(map.getCenter());
+onDragEnd()
+    });
+
+
+
+
+
+
+
+
 
 
     function onDragEnd() {
@@ -124,46 +141,6 @@
 
 
 
-
-
-
-
-
-    // changing long-latitude
-
-
-    //
-    // $('button').click(function () {
-    //     lat = $('#latitude').val();
-    //     long = $('#longitude').val();
-    //     updateWeather();
-    // });
-    // updateWeather();
-
-
-    // function to add 3 day forcast
-
-        // $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/" + lat + "," + long).done(function (days) {
-        //
-        //     var dayOneData = "";
-        //
-        //
-        //     for (var i = 0; i < 3; i++) {
-        //         dayOneData += '<div class="card" >';
-        //         dayOneData += "<ul>";
-        //         dayOneData += "<li>" + days.daily.data[i].apparentTemperatureLow + "/" + days.daily.data[i].apparentTemperatureHigh + "</li>";
-        //         dayOneData += "<img src='" + weatherIcon(iconArray, days.daily.data[i].icon) + "'>";
-        //         dayOneData += " <li>" + "<bold>Weather:</bold>" + days.daily.data[i].summary + "</li>";
-        //         dayOneData += "<li>" + "<bold>Humidity:</bold>" + days.daily.data[i].humidity + "</li>";
-        //         dayOneData += "<li>" + "<bold>Wind:</bold>" + days.daily.data[i].windSpeed + "</li>";
-        //         dayOneData += " <li>" + "<bold>pressure:</bold>" + days.daily.data[i].pressure + "</li>";
-        //         dayOneData += "</ul>";
-        //         dayOneData += "</div>";
-        //     }
-        //
-        //     $('#container').html(dayOneData)
-        //
-        // });
 
 
 // icon array
@@ -218,10 +195,6 @@ function weatherIcon(icon, apiIcon) {
     }
 }
 
-    // $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+ darkSkyKey +"/29.4241,-98.4936").done(function(days) {
-    //
-    //
-    // });
 
 
     
