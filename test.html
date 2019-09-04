@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <style>
+        p{
+            /*visibility: hidden;*/
+        }
+    </style>
+    <title>jQuery</title>
+    <meta charset="utf8">
+</head>
+<body>
+<h1 id="greeting">Hello World</h1>
+
+
+
+
+<h1>The color is <span id="color">undefined</span></h1>
+<form>
+    <div class="form-group">
+        <label for="color-spec"></label>
+        <input id="color-spec" type="text" placeholder="Please enter a color">
+        <button id="update-color-btn" type="button">Update color</button>
+    </div>
+</form>
+
+<h1>here is a list of things i love</h1>
+
+<ul class="add">
+
+</ul>
+<p>Bana</p>
+<p>Paragraph #1</p>
+<p>Paragraph #2</p>
+<p class="gone" >Paragraph #3</p>
+<p>Paragraph #4</p>
+<p>Paragraph #6</p>
+
+<ul>
+    <li>232</li>
+    <li>3223</li>
+    <li>323</li>
+</ul>
+
+<ul>
+    <li>323</li>
+    <li>323</li>
+    <li>3233</li>
+</ul>
+
+<ul>
+    <li>eqwdqd</li>
+    <li>dwede</li>
+    <li>ddadqdqdqwd</li>
+
+</ul>
+
+<button id="bt">Highlight list one</button>
+<button id="hide">hide 2</button>
+<button id="back">make the background red</button>
+<button id="append"></button>
+<button id="first"> first</button>
+<button id="second">sec</button>
+<button id="last">last</button>
+<button id="everyOther">every other</button>
+
+<script
+        src="https://code.jquery.com/jquery-2.2.4.js"
+        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+        crossorigin="anonymous">
+
+</script>
+
+<script>
+    $(document).ready(function () {
+        // changing the color of the first child
+        $('#bt').click(function () {
+            $('p').last().css('background-color', 'yellow');
+        });
+
+        //Hilight the  first three in the ul
+        $('#first').click(function () {
+           $('ul').each(function () {
+               $(this).children().first().css('background-color','yellow')
+           })
+        });
+//      HIGHLIGHT LAST THREE IN UL
+        $('#last').click(function () {
+            $('ul').each(function () {
+                $(this).children().last().css('background-color','yellow')
+            })
+        });
+
+        //Highlight every other one
+        $('#everyOther').click(function () {
+            $('li').each(function(index) {
+                if (index % 2 !== 0) {
+                    $(this).css('background-color', '#FF0');
+                }
+            });
+        });
+
+        // changing the color of a word and the html
+
+        $('#update-color-btn').click(function() {
+            var newColor = $('#color-spec').val();
+            $('#color').css('color', newColor);
+            $('#color').html(newColor);
+
+
+        });
+
+
+            $('#hide').click(function () {
+            $('.gone').css('visibility','hidden');
+            $('p').last().html("tis i the spanish inqasition")
+        });
+
+
+        $('#append').click(function(){
+            $('.add').append('<li>dogs</li>')
+        });
+
+        $('#greeting').animate({'opacity': 0}, 2000, function(){
+            $(this).html('Goodbye, World!').animate({'opacity': 1}, 2000);
+        });
+
+        $('#back').click(function () {
+            $('body').css('background-color', 'lightblue');
+            $('body').html('This is not red').css('font-size','14em')
+        });
+
+
+
+
+
+
+
+
+    })
+
+
+
+
+
+</script>
+</body>
+</html>

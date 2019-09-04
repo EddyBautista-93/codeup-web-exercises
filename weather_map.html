@@ -8,10 +8,14 @@
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.0/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
     <style>
         body{
             margin: auto;
+            font-family: 'Roboto', sans-serif;
+
+
         }
         ul{
             list-style: none;
@@ -19,36 +23,36 @@
 
         #map { top:0;
             bottom:0;
-            width: 100%;
-            height: 400px; }
+            width: 80%;
+            height: 400px;
+            margin-left: 12em;
+            border: 1px solid black;
+        }
 
+
+        .card{
+            /*background-color: #396277;*/
+            display: flex;
+            justify-content: flex-start;
+            -webkit-box-shadow: 0 8px 6px -6px black;
+            -moz-box-shadow: 0 8px 6px -6px black;
+            box-shadow: 0 8px 6px -6px black;
+        }
     </style>
+
 
 
 </head>
 <body>
-<h1 class="text-center">Weather For <span id="location"> San Antonio, Texas</span></h1>
+<h1 id="toggle">3 Day Weather Forcast!</h1>
 
 
-<h3>San Antonio</h3>
+
 
 <div id="container" class="card-deck mb-3 text-center">
 
 </div>
 
-<!--<div>-->
-<!--    <h1>Enter Longitude and Latitude</h1>-->
-<!--    <form>-->
-<!--        <div class="form-group">-->
-<!--            <label for="latitude"></label>-->
-<!--            <input id="latitude" type="text" placeholder="Enter Latitude"><br>-->
-<!--            <label for="longitude"></label>-->
-<!--            <input id="longitude" type="text" placeholder="EnterLongitude">-->
-<!--            <button id="update-lat-long" type="button">Update</button>-->
-<!--        </div>-->
-<!--    </form>-->
-
-<!--</div>-->
 
 <div id='map'></div>
 <pre id='coordinates' class='coordinates'></pre>
@@ -63,12 +67,18 @@
 <script src="JS/keys.js"></script>
 <script>
 
+
+
+    $('#toggle').click(function() {
+        $('.card').slideToggle();
+    });
+
     // added mapbox
     mapboxgl.accessToken = mapboxToken;
     var coordinates = document.getElementById('coordinates');
     var map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9',
+        style: 'mapbox://styles/mapbox/streets-v11',
         zoom: 5,
         center: [-98.4916, 29.4252]
     });
@@ -181,7 +191,7 @@ var iconArray = [{
         name: "partly-cloudy-day"
     },
     {
-        link: "icons/SVG/CLoud-Moon.svg",
+        link: "icons/SVG/Cloud-Moon.svg",
         name: "party-cloudy-night"
 }];
 
