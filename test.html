@@ -26,14 +26,6 @@
     </div>
 </form>
 
-<h1> HI my name is <span id="name">undefined</span></h1>
-<form>
-    <div class="form-group">
-        <label for="color-spec"></label>
-        <input id="name-input" type="text" placeholder="Please enter a name">
-        <button id="scream-name" type="button">scream name</button>
-    </div>
-</form>
 
 
 
@@ -49,7 +41,7 @@
 <p>Paragraph #4</p>
 <p>Paragraph #6</p>
 
-<ul>
+<ul id="this">
     <li>232</li>
     <li>3223</li>
     <li>323</li>
@@ -123,7 +115,11 @@
 
         });
 
-        // toggle color on and off
+        $('li').dblclick(function () {
+            $(this).css('font-size','3em').css('color','pink')
+        });
+
+        toggle color on and off
             var clicked = true;
 
         $("li").click(function(){
@@ -163,7 +159,7 @@
         $('#scream-name').click(function () {
             var name = $('#name-input').val();
             $('#name').html(name.toUpperCase())
-        })
+        });
 
 
 
@@ -172,8 +168,8 @@
 
 
 
-    })
 
+    });
 
 
 
