@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Document</title>
+    <style>
+        body {
+            padding: 5em;
+        }
+        hr {
+            margin: 5em 0;
+        }
+        .highlight{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+<button id="change-bg-color">
+    Change the background color
+</button>
+
+<hr />
+
+<button id="append-to-ul">Append to the ul</button>
+<ul id="append-to-me"></ul>
+
+<hr />
+
+<h1 id="message">Hello, World!</h1>
+
+<hr />
+
+<ul id="hl-toggle">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+
+<hr />
+
+<ul id="font-grow">
+    <li>text</li>
+    <li>text</li>
+    <li>text</li>
+</ul>
+
+<hr />
+
+<input id="input">
+<button id="upcase-name">Upper Case</button>
+<p id="output"></p>
+<script
+        src="https://code.jquery.com/jquery-2.2.4.js"
+        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+        crossorigin="anonymous"></script>
+<script src="main.js"></script>
+<script>
+
+    $(document).ready(function(){
+
+
+        // changed background color to blue
+        $('#change-bg-color').click(function () {
+            $('body').css('background-color','blue')
+        });
+
+        // appending li of text
+        $('#append-to-ul').click(function () {
+            $('#append-to-ul').next().append('<li>text</li>')
+        });
+
+
+        // found on stack overdlow and it closley rembles more of the ig
+        var text = ["Goodbye, World!"];
+        var counter = 0;
+        var elem = document.getElementById("message");
+        var inst = setInterval(change, 2000);
+
+        function change() {
+            elem.innerHTML = text[counter];
+            counter++;
+            if (counter >= text.length) {
+                counter = 0;
+                clearInterval(inst); // uncomment this if you want to stop refreshing after one cycle
+            }
+        }
+
+
+        // click on and off
+
+
+
+
+        var clicked = true;
+
+        $('#hl-toggle > li').click(function () {
+            if(clicked){
+                $(this).css('background-color','yellow');
+                clicked = false;
+
+            } else {
+                $(this).css('background-color','white');
+                clicked = true;
+
+            }
+        });
+
+// upper case
+        $('#upcase-name').click(function(){
+            var name = $('#input').val();
+            $('#output').html('Your name uppercased is: ' + name.toUpperCase())
+        });
+
+        $('#font-grow > li').dblclick(function () {
+            $(this).css('font-size','200%')
+        })
+
+    });
+
+</script>
+
+
+</body>
+</html>
