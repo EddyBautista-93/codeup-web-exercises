@@ -49,50 +49,82 @@
     // This script works fine but let's update the JS!
     // TODO: REFACTOR AS MANY PARTS OF THIS SCRIPT FROM ES5 TO ES6 SYNTAX AS POSSIBLE
 
-    (function() {
+    // (function() {
+    //
+    //     "use strict";
+    //
+    //     let showBtn = document.getElementById("showBtn");
+    //
+    //     const movies = [
+    //         {
+    //             name: "LOTR",
+    //             year: "2001",
+    //             genre: "Fantasy"
+    //         },
+    //         {
+    //             name: "The Matrix",
+    //             year: "1999",
+    //             genre: "Sci-Fi"
+    //         },
+    //         {
+    //             name: "Shine",
+    //             year: "1996",
+    //             genre: "Drama"
+    //         }
+    //     ];
+    //
+    //     const buildMovieHTML = movie => {
+    //         let html = "";
+    //         html += `<ul><li> ${movie.name}`;
+    //         html +=  `</li><li>${movie.year}`;
+    //         html +=  `</li><li>${movie.genre}</li></ul>`;
+    //         return html;
+    //     };
+    //
+    //     const addHTMLToPage = movies => {
+    //         let movieItems = document.getElementsByClassName('movie');
+    //         for (var i = 0; i < movies.length; i += 1) {
+    //             movieItems[i].innerHTML = buildMovieHTML(movies[i]);
+    //         }
+    //     };
+    //
+    //     showBtn.addEventListener("click", function() {
+    //         addHTMLToPage(movies);
+    //     });
+    //
+    // })();
+    // var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    //
+    // var evens = numbers.filter(function(n) {
+    //     return n % 2 === 0;
+    // });
+    // console.log(evens); // [2, 4, 6, 8, 10]
+    //
+    //
+    // var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    //
+    // var evens = numbers.filter(function(n) {
+    //     return n % 2 === 0;
+    // });
+    // console.log(evens); // [2, 4, 6, 8, 10]
 
-        "use strict";
+    const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-        let showBtn = document.getElementById("showBtn");
+    const evens = numbers.filter(n => n % 2 === 0);
+    console.log(evens); // [2, 4, 6, 8, 10]
 
-        const movies = [
-            {
-                name: "LOTR",
-                year: "2001",
-                genre: "Fantasy"
-            },
-            {
-                name: "The Matrix",
-                year: "1999",
-                genre: "Sci-Fi"
-            },
-            {
-                name: "Shine",
-                year: "1996",
-                genre: "Drama"
-            }
-        ];
+    const incremented = numbers.map(n => n + 1);
+    console.log(incremented); // [2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 
-        const buildMovieHTML = movie => {
-            let html = "";
-            html += `<ul><li> ${movie.name}`;
-            html +=  `</li><li>${movie.year}`;
-            html +=  `</li><li>${movie.genre}`+'</li></ul>';
-            return html;
-        };
 
-        const addHTMLToPage = movies => {
-            let movieItems = document.getElementsByClassName('movie');
-            for (var i = 0; i < movies.length; i += 1) {
-                movieItems[i].innerHTML = buildMovieHTML(movies[i]);
-            }
-        }
 
-        showBtn.addEventListener("click", function() {
-            addHTMLToPage(movies);
-        });
 
-    })();
+
+
+
+
+
+
 
 
 </script>
