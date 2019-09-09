@@ -61,7 +61,7 @@ console.log(yearsExp);
 
 //Use .reduce to get the longest email from the list of users.
 
-let longestEmail = userEmail.reduce(function (a, b) { return a.length > b.length ? a : b; });
+let longestEmail = userEmail.reduce( (a, b) => { return a.length > b.length ? a : b; });
 
 
 console.log(longestEmail);
@@ -77,3 +77,8 @@ console.log(teachers);
 
 //BONUS Use .reduce to get the unique list of languages from the list of users.
 
+// let uniqLang = users.reduce((x, person)x `${person.name} knows ${person.language} `,"")
+
+
+// let uniqLang = users.reduce((finalString, person) => finalString + `${person.name} knows ${person.language}, `, "");
+// console.log(uniqLang);
