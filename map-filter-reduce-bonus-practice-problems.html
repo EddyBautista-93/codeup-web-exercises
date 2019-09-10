@@ -88,17 +88,40 @@
         ];
 
         // PROBLEM 1 - create an array of the first letters of each fruit
+        let firstLetter = fruits.map(fruit => fruit[0]);
+        console.log(firstLetter);
 
         // PROBLEM 2 - create array of user objects based on the customers array
         // of objects (each user object should just have name and age properties)
-
+        let customerObject = customers.map(person => `name:${person.name} age: ${person.age}`);
+        console.log(customerObject);
         // PROBLEM 3 - create an array of civil servant customers (teachers and police officers)
         // containing the same properties as the objects on the customers objects
 
+        let civilServant = customers.filter(person => {
+            if( person.occupation ===  "Teacher" || person.occupation ===  "Police Officer" ){
+                return person;
+            }
+        });
+        console.log(civilServant);
+
         // PROBLEM 4 - determine the average age of customers
 
+        let avgAge =  customers.reduce((x,customer) => x + customer.age,0);
+        console.log(avgAge/customers.length);
+
         // PROBLEM 5 - create a function makeSuperPet() that takes in the pets array as input and returns a single pet object
-        // with the following shape...
+        // with the following shape..
+
+        const makeSuperPet = arr =>
+            arr.reduce((superPet, pet) => {
+                superPet.name += pet.name;
+                superPet.age += pet.age;
+                superPet.breed += pet.breed.charAt(0);
+                return superPet;
+            }, {name: "", age: 0, breed: ""});
+        console.log(makeSuperPet(pets));
+
         /*
 
             {

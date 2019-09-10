@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promises</title>
+</head>
+<body>
+<h1>Promises</h1>
+
+
+<script>
+
+    // making a new promise object
+    // the promise stays pending till the resolve or reject function is
+    // invoked
+
+
+    // const myPromise = new Promise((resolve, reject) => {
+    //     if (Math.random() > 0.5) {
+    //         resolve();
+    //     } else {
+    //         reject();
+    //     }
+    // });
+    //
+    // console.log(myPromise)
+
+
+
+    // .then: accepts a callback that will run when the promise is resolved.
+    // .catch: accepts a callback that will run when the promise is rejected.
+
+
+    //     const myPromise = new Promise((resolve, reject) => {
+    //     if (Math.random() > 0.5) {
+    //         resolve();
+    //     } else {
+    //         reject();
+    //     }
+    // });
+    //
+    // myPromise.then(() => console.log('resolved!'));
+    // myPromise.catch(() => console.log('rejected!'));
+
+    //
+    // const myPromise = new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //         if (Math.random() > 0.5) {
+    //             resolve();
+    //         } else {
+    //             reject();
+    //         }
+    //     }, 1500);
+    // });
+    //
+    // console.log(myPromise); // a pending promise
+    // //
+    // myPromise.then(() => console.log('resolved!'));
+    // myPromise.catch(() => console.log('rejected!'));
+    function makeRequest() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (Math.random() > 0.1) {
+                    resolve('Here is your data: ...');
+                } else {
+                    reject('Network Connection Error!');
+                }
+            }, 1500);
+        });
+    }
+
+    const request = makeRequest();
+    console.log(request); // pending promise
+    request.then(data => console.log('Promise resolved!', data));
+    // if resolved, will log "Promise resolved!" and "Here is your data: ..."
+    request.catch(error => console.log('Promise rejected!', error));
+    // if rejected, will log "Promise rejected!" and "Network Connection Error!"
+
+
+
+</script>
+</body>
+</html>
