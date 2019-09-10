@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>promises</title>
+</head>
+<body>
+<h1>Enter your Github UserName</h1>
+<form>
+    <div >
+        <label for="userName"></label>
+        <input id="username" type="text" placeholder="Please enter a color">
+        <button id="github" type="button">Last Commit</button>
+        <p id="commit"></p>
+    </div>
+</form>
+
+
+
+<script src="JS/promises.js"></script>
+<script>
+    function getCommit(user){
+    fetch( `https://api.github.com/users/${user}/events`, {headers: {'Authorization': `token da0e02d9ca2666f3f336a471ffd98ecdb5cc2084` }})
+        .then(response => response.json())
+        .then(data => data.filter(function (object) {
+             return object.type === 'PushEvent'
+        }))
+        .then(listEvents => console.log(listEvents[0].created_at))
+    }
+getCommit("EddyBautista-93")
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

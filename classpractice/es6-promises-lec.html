@@ -18,7 +18,7 @@
         integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
         crossorigin="anonymous"></script>
 <script>
-    "use strict";
+    // "use strict";
     // ====================================================================================
     // ==================================== PROMISES ======================================
     // ====================================================================================
@@ -48,25 +48,25 @@
     //             console.log(message);
     //         });
     // ============ Basic Example of Promise Creation
-    let goodKid = true;
+    // let goodKid = true;
     //
     // // a promise is made to do something
     //
 
-    const getCake = new Promise((res, rej) => {
-
-
-    setTimeout(function(){
-
-        if (goodKid) {
-            res('You get cake!');
-        } else {
-            rej('You don\'t cake, bad child.');
-        }
-    },2000)
-    });
-
-    console.log(getCake);
+    // const getCake = new Promise((res, rej) => {
+    //
+    //
+    // setTimeout(function(){
+    //
+    //     if (goodKid) {
+    //         res('You get cake!');
+    //     } else {
+    //         rej('You don\'t cake, bad child.');
+    //     }
+    // },2000)
+    // });
+    //
+    // console.log(getCake);
     //
     // // once the promise is resolved or rejected, take additional action
     //
@@ -87,25 +87,40 @@
     // }).then((three) => {
     //     console.log(three);
     // });
+
+
+
+
+
     // ============ Fetch API
     // jQuery AJAX request example
-    // $.ajax('https://swapi.co/api/people/1')
-    //     .done(function(data) {
-    //         console.log(data);
-    //     })
-    //     .fail(function(jqXHR, message) {
-    //         console.log(message);
-    //     });
+    $.ajax('https://swapi.co/api/people/1')
+        .done(function(data) {
+            console.log(data);
+        })
+        .fail(function(jqXHR, message) {
+            console.log(message);
+        });
     // Fetch API GET example
-    //     fetch('https://swapi.co/api/people/1')
-    //         .then((response) => {
-    //             return response.json();
-    //         })
-    //         .then((data) => {
-    //             // build html
-    //         })
-    //         .catch(console.log);
-    //
+
+        // fetch('https://swapi.co/api/people/1').then(function(res) {
+        //         return res.json();
+        //     })
+        //     .then(function(data) {
+        //         // build html
+        //     })
+        //     .catch(function(){
+        //         console.log('something went wrong')
+        //     });
+
+
+    fetch('https://swapi.co/api/people/1').then(function (res) {
+        return res.json();
+    })
+        .then(function (data) {
+            console.log(data)
+        })
+
     //
     //     fetch('https://hookb.in/kxLqNKarPNtepeoxWgnZ', {
     //         method: 'POST',
