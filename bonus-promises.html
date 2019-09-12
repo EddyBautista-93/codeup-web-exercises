@@ -5,8 +5,19 @@
     <title>Title</title>
 </head>
 <body>
-
-
+<h1>Enter your Github UserName</h1>
+<form>
+    <div >
+        <label for="userName"></label>
+        <input id="username" type="text" placeholder="Please enter a color">
+        <button id="github" type="button">Last Commit</button>
+        <p id="commit"></p>
+    </div>
+</form>
+<script
+        src="https://code.jquery.com/jquery-2.2.4.js"
+        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+        crossorigin="anonymous"></script>
 <script>
 
     // =================== Fetch Bonuses
@@ -24,6 +35,16 @@
     // Add an input field and submit button (you will need to prevent the default behaviour) that when clicked, runs the following function...
     // Create a function that takes in a username and fetch's the color preference based on the username and sets the background color to that color.
     //
+
+
+
+    function backgroundColor(user){
+        if(user === "sandy123"){
+            $('body').css('background-color',${user.)
+        }
+    }
+
+    backgroundColor()
     //
     //
     // -- Ex. 2
