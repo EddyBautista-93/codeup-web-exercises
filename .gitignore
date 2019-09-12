@@ -1,7 +1,9 @@
 .idea/*
 .iml
 
-
+public/main.js
+*.map
+node_modules
 <<<<<<< HEAD
 =======
 keys.js
