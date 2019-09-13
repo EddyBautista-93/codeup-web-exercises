@@ -11,15 +11,55 @@
 </head>
 <body>
 
+    <input type="text" id="input">
+    <button onclick="fetchMovie()" type="text">click me</button>
+
+    <div>
+        <img src="" id="poster" alt="">
+    </div>
 
 
-    <h1>promise</h1>
+
+
+<!--<script src="JS/promises.js"></script>-->
+    <script>
+    const poster = document.getElementById("poster");
+    let button = document.getElementById("btn");
+
+
+    let users = "";
+
+    let inputTitle = "";
+
+
+    const fetchMovie = (title) => {
+        if (title !== undefined) {
+            inputTitle = document.getElementById("input").value;
+            fetch(`http://www.omdbapi.com/?t=${title}&apikey=db1cd656`)
+                .then((response) => response.json())
+                .then((json) => {
+                    users = json;
+                    console.log(json)
+            });
+        } else {
+            inputTitle = document.getElementById("input").value;
+            title = inputTitle;
+            fetch(`http://www.omdbapi.com/?t=${title}&apikey=db1cd656`)
+                .then((response) => response.json())
+                .then((json) => {
+                    users = json;
+                    console.log(json)
+                });
+        }
+        setTimeout(function () {
+            poster.src = users.Poster;
+        }, 800)
+    };
 
 
 
 
-<script src="JS/promises.js"></script>
-
+    </script>
 
 
 
