@@ -18,6 +18,7 @@
     function returnFive() {
         return 5;
     }
+
     console.log(returnFive());
 
     // Write a function, isFive, that takes in an input and returns the boolean value true if the passed argument is
@@ -27,9 +28,10 @@
     // takes in a input and returns the boolean value as true if the argument is equal to 5 or "5"
 
     function isFive(numberInputedByUser) {
-       return numberInputedByUser === 5 || numberInputedByUser === "5";
+        return numberInputedByUser === 5 || numberInputedByUser === "5";
 
     }
+
     console.log(isFive(5));
 
     // Write a function, isShortWord, that takes in a string and returns the boolean value true if the passed argument
@@ -42,8 +44,8 @@
     function isShortWord(inputWord) {
         return inputWord.length < 5;
     }
-    console.log(isShortWord("word"));
 
+    console.log(isShortWord("word"));
 
 
     // Write a function, isSameLength, that takes in two string inputs and returns the boolean value true if the
@@ -56,6 +58,7 @@
         return equalArgument.length === equalArgument2.length;
 
     }
+
     console.log(isSameLength("worde", "worede"))
 
 
@@ -63,9 +66,10 @@
     // return a substring of the first argument that is as many characters long as the second argument in lowercase.
 
 
-    function getSmallerSegment (stringInput, numberInput) {
-    return stringInput.substring(0 , numberInput).toLowerCase();
+    function getSmallerSegment(stringInput, numberInput) {
+        return stringInput.substring(0, numberInput).toLowerCase();
     }
+
     console.log(getSmallerSegment("ADD STRING HERE", 3));
 </script>
 </body>

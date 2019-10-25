@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-
     <style>
-        p{
+        p {
             /*visibility: hidden;*/
         }
     </style>
@@ -13,8 +11,6 @@
 </head>
 <body>
 <h1 id="greeting">Hello World</h1>
-
-
 
 
 <h1>The color is <span id="color">undefined</span></h1>
@@ -26,9 +22,6 @@
     </div>
 </form>
 
-
-
-
 <h1>here is a list of things i love</h1>
 
 <ul class="add">
@@ -37,7 +30,7 @@
 <p>Bana</p>
 <p>Paragraph #1</p>
 <p>Paragraph #2</p>
-<p class="gone" >Paragraph #3</p>
+<p class="gone">Paragraph #3</p>
 <p>Paragraph #4</p>
 <p>Paragraph #6</p>
 
@@ -85,20 +78,20 @@
 
         //Hilight the  first three in the ul
         $('#first').click(function () {
-           $('ul').each(function () {
-               $(this).children().first().css('background-color','yellow')
-           })
+            $('ul').each(function () {
+                $(this).children().first().css('background-color', 'yellow')
+            })
         });
 //      HIGHLIGHT LAST THREE IN UL
         $('#last').click(function () {
             $('ul').each(function () {
-                $(this).children().last().css('background-color','yellow')
+                $(this).children().last().css('background-color', 'yellow')
             })
         });
 
         //Highlight every other one
         $('#everyOther').click(function () {
-            $('li').each(function(index) {
+            $('li').each(function (index) {
                 if (index % 2 !== 0) {
                     $(this).css('background-color', '#FF0');
                 }
@@ -107,7 +100,7 @@
 
         // changing the color of a word and the html
 
-        $('#update-color-btn').click(function() {
+        $('#update-color-btn').click(function () {
             var newColor = $('#color-spec').val();
             $('#color').css('color', newColor);
             $('#color').html(newColor);
@@ -116,57 +109,47 @@
         });
 
         $('li').dblclick(function () {
-            $(this).css('font-size','3em').css('color','pink')
+            $(this).css('font-size', '3em').css('color', 'pink')
         });
 
         //toggle color on and off
-            var clicked = true;
+        var clicked = true;
 
-        $("li").click(function(){
-            if(clicked){
+        $("li").click(function () {
+            if (clicked) {
                 $(this).css('background-color', 'yellow');
-               clicked  = false;
+                clicked = false;
             } else {
                 $(this).css('background-color', 'white');
-                clicked  = true;
+                clicked = true;
             }
         });
 
 
         // hid a li and changed the html of the last li
-            $('#hide').click(function () {
-            $('.gone').css('visibility','hidden');
+        $('#hide').click(function () {
+            $('.gone').css('visibility', 'hidden');
             $('p').last().html("tis i the spanish inqasition")
         });
 
         // added a li after ul and will keep addin more
-        $('#append').click(function(){
+        $('#append').click(function () {
             $('.add').append('<li>dogs</li>')
 
         });
 
-            // heading will disappear after two seconds and a new text will appear over it
-        $('#greeting').animate({'opacity': 0}, 2000, function(){
+        // heading will disappear after two seconds and a new text will appear over it
+        $('#greeting').animate({'opacity': 0}, 2000, function () {
             $(this).html('Goodbye, World!').animate({'opacity': 1}, 2000);
         });
         // its a mystery
         $('#back').click(function () {
             $('body').css('background-color', 'lightblue');
-            $('body').html('This is not red').css('font-size','14em')
+            $('body').html('This is not red').css('font-size', '14em')
         });
 
 
-
-
-
-
-
-
-
-
     });
-
-
 
 
 </script>

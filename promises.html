@@ -5,13 +5,11 @@
     <title>promises</title>
 </head>
 <body>
-
-
-
-
 <script src="JS/promises.js"></script>
 <script>
+    // Function talks to app
     function getCommit(user){
+        //the fetch gets the api url and we use ${} to add a value
     fetch( `https://api.github.com/users/${user}/events`, {headers: {'Authorization': `token da0e02d9ca2666f3f336a471ffd98ecdb5cc2084` }})
         .then(response => response.json())
         .then(data => data.filter(function (object) {
@@ -19,14 +17,7 @@
         }))
         .then(listEvents => console.log(listEvents[0].created_at))
     }
-getCommit("EddyBautista-93")
-
-
-
-
-
-
-
+getCommit("EddyBautista-93");
 </script>
 </body>
 </html>

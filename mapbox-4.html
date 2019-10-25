@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.css' rel='stylesheet' />
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.css' rel='stylesheet'/>
 </head>
 <body>
 
@@ -11,35 +11,33 @@
 <div id='map' style='width: 400px; height: 300px;'></div>
 
 
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.js'></script>
+<script src="JS/mapbox-geocoder-utils.js"></script>
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZWRkeWJhdXRpc3RhIiwiYSI6ImNqemloYWY1czE2dzYzY253M3VydHo4ODkifQ.-V9O-Cx6Aw9zJDBrqDcSXg';
 
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.js'></script>
-    <script src="JS/mapbox-geocoder-utils.js" ></script>
-    <script>
-        mapboxgl.accessToken = 'pk.eyJ1IjoiZWRkeWJhdXRpc3RhIiwiYSI6ImNqemloYWY1czE2dzYzY253M3VydHo4ODkifQ.-V9O-Cx6Aw9zJDBrqDcSXg';
+    var token = 'pk.eyJ1IjoiZWRkeWJhdXRpc3RhIiwiYSI6ImNqemloYWY1czE2dzYzY253M3VydHo4ODkifQ.-V9O-Cx6Aw9zJDBrqDcSXg';
 
-        var token = 'pk.eyJ1IjoiZWRkeWJhdXRpc3RhIiwiYSI6ImNqemloYWY1czE2dzYzY253M3VydHo4ODkifQ.-V9O-Cx6Aw9zJDBrqDcSXg';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 13,
+        center: [-114.3346, 48.4108]
+    });
 
-        var map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v9',
-            zoom: 13,
-            center: [-114.3346, 48.4108]
-        });
-
-        geocode("Whitefish, Montana",token).then(function(result) {
-            console.log(result);
-            map.setCenter(result);
-            map.setZoom(20);
-        });
-
-
-        reverseGeocode({lng: -157.8060 , lat: 21.2620}, token).then(function(results) {
-            // logs the address for The Alamo
-            console.log(results);
-        });
+    geocode("Whitefish, Montana", token).then(function (result) {
+        console.log(result);
+        map.setCenter(result);
+        map.setZoom(20);
+    });
 
 
+    reverseGeocode({lng: -157.8060, lat: 21.2620}, token).then(function (results) {
+        // logs the address for The Alamo
+        console.log(results);
+    });
 
-    </script>
+
+</script>
 </body>
 </html>

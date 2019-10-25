@@ -4,25 +4,28 @@
     <meta charset="UTF-8">
     <title>San Antonio Weather</title>
 
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/>
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.0/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.0/mapbox-gl.css' rel='stylesheet' />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.0/mapbox-gl.css' rel='stylesheet'/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
     <style>
-        body{
+        body {
             margin: auto;
             font-family: 'Roboto', sans-serif;
 
 
         }
-        ul{
+
+        ul {
             list-style: none;
         }
 
-        #map { top:0;
-            bottom:0;
+        #map {
+            top: 0;
+            bottom: 0;
             width: 80%;
             height: 400px;
             margin-left: 12em;
@@ -30,7 +33,7 @@
         }
 
 
-        .card{
+        .card {
             /*background-color: #396277;*/
             display: flex;
             justify-content: flex-start;
@@ -41,12 +44,9 @@
     </style>
 
 
-
 </head>
 <body>
 <h1 id="toggle">3 Day Weather Forcast!</h1>
-
-
 
 
 <div id="container" class="card-deck mb-3 text-center">
@@ -59,8 +59,9 @@
 
 
 <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.min.js'></script>
-<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css' type='text/css' />
-
+<link rel='stylesheet'
+      href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css'
+      type='text/css'/>
 
 
 <script src="JS/jquery-2.2.4.js"></script>
@@ -68,8 +69,7 @@
 <script>
 
 
-
-    $('#toggle').click(function() {
+    $('#toggle').click(function () {
         $('.card').slideToggle();
     });
 
@@ -88,7 +88,7 @@
     map.addControl(new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
         mapboxgl: mapboxgl,
-        marker:false
+        marker: false
     }));
 
 
@@ -100,26 +100,17 @@
         .addTo(map);
 
 
-
-    map.on("moveend", function() {
+    map.on("moveend", function () {
         marker.setLngLat(map.getCenter());
-onDragEnd()
+        onDragEnd()
     });
-
-
-
-
-
-
-
-
 
 
     function onDragEnd() {
         var lngLat = marker.getLngLat();
 
         var i = lngLat.lng;
-         var j = lngLat.lat;
+        var j = lngLat.lat;
 
 
         $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/" + j + "," + i).done(function (days) {
@@ -149,65 +140,58 @@ onDragEnd()
     onDragEnd();
 
 
+    // icon array
+    var iconArray = [{
+        link: "icons/SVG/Sun.svg",
+        name: "clear-day"
+    },
+        {
+            link: "icons/SVG/Moon-Waxing-Crescent.svg",
+            name: "clear-night"
+        },
+        {
+            link: "icons/SVG/Cloud-Rain.svg",
+            name: "rain"
+        },
+        {
+            link: "icons/SVG/Cloud-Snow-Sun",
+            name: "snow"
+        },
+        {
+            link: "icons/SVG/Cloud-Snow-Alt.svg",
+            name: "sleet"
+        },
+        {
+            link: "icons/SVG/Wing.svg",
+            name: "wind"
+        },
+        {
+            link: "icons/SVG/Cloud-Fog.svg",
+            name: "fog"
+        },
+        {
+            link: "icons/SVG/Cloud-Sun.svg",
+            name: "cloudy"
+        },
+        {
+            link: "icons/SVG/Cloud-Sun.svg",
+            name: "partly-cloudy-day"
+        },
+        {
+            link: "icons/SVG/Cloud-Moon.svg",
+            name: "party-cloudy-night"
+        }];
 
+    // function to change icons
+    function weatherIcon(icon, apiIcon) {
+        for (var i = 0; i < iconArray.length; i++) {
+            if (iconArray[i].name === apiIcon) {
+                return iconArray[i].link
 
-
-
-// icon array
-var iconArray = [{
-    link: "icons/SVG/Sun.svg",
-    name: "clear-day"
-},
-    {
-        link: "icons/SVG/Moon-Waxing-Crescent.svg",
-        name: "clear-night"
-    },
-    {
-        link: "icons/SVG/Cloud-Rain.svg",
-        name: "rain"
-    },
-    {
-        link: "icons/SVG/Cloud-Snow-Sun",
-        name: "snow"
-    },
-    {
-        link: "icons/SVG/Cloud-Snow-Alt.svg",
-        name: "sleet"
-    },
-    {
-        link: "icons/SVG/Wing.svg",
-        name: "wind"
-    },
-    {
-        link: "icons/SVG/Cloud-Fog.svg",
-        name: "fog"
-    },
-    {
-        link: "icons/SVG/Cloud-Sun.svg",
-        name: "cloudy"
-    },
-    {
-        link: "icons/SVG/Cloud-Sun.svg",
-        name: "partly-cloudy-day"
-    },
-    {
-        link: "icons/SVG/Cloud-Moon.svg",
-        name: "party-cloudy-night"
-}];
-
-// function to change icons
-function weatherIcon(icon, apiIcon) {
-    for (var i = 0; i < iconArray.length; i++) {
-        if (iconArray[i].name === apiIcon) {
-            return iconArray[i].link
-
+            }
         }
     }
-}
 
-
-
-    
 
 </script>
 </body>
