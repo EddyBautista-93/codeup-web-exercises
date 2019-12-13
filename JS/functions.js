@@ -1,4 +1,4 @@
-"use strict";
+
 
 /**
  * TODO:
@@ -8,15 +8,16 @@
  * Example
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
-// function name is sayHello
-//
 
-    function sayHello(name) {
-    return "hello" + " " + name + "!";
-}
-    console.log(sayHello("Codeup"));
+       // ES5 way of making a function
+//     function sayHello(name) {
+//     return "hello" + " " + name + "!";
+// }
+//     console.log(sayHello("Codeup"));
 
+    // es6 arrow function with template literals
 
+    const sayHello = (name) => `Hello, ${name}!`;
 
 /**
  * TODO:
@@ -25,11 +26,8 @@
  *
  * console.log 'helloMessage' to check your work
  */
-// function is called sayHello
 
-
-
-    var helloMessage = sayHello("eddy");
+    let helloMessage = sayHello("eddy");
     console.log(helloMessage);
 /**
  * TODO:
@@ -41,14 +39,18 @@
     // function is sayHello
     // var myName = "eddy"
 
+    // Oh old Eddy, you have come a long way child
 //     function sayHello(str){
 //         var myName = str;
 //         return myName;
 // }
 //     console.log(sayHello("eddy"));
 
-    var myName = "eddy:";
-    console.log(myName);
+    // var myName = "eddy:";
+    // console.log(myName);
+
+    let name = 'Eddy';
+    console.log(sayHello(name));
 
 
 
@@ -57,7 +59,6 @@
 // and stores it in a variable named random
 var random = Math.floor((Math.random() * 3) + 1);
 
-// function is called isTwo
 /**
  * TODO:
  * Create a function called 'isTwo' that takes a number as a parameter.
@@ -78,15 +79,19 @@ var random = Math.floor((Math.random() * 3) + 1);
 //output is number
 
 
-//
+    //Cleaning that old es5
 //     function isTwo(num) {
 //     return num === 2;
-// }
-//     console.log(isTwo(random))
+//      }
 
-// console.log(isTwo(1));
-// console.log(isTwo(2));
-// console.log(isTwo(3));
+    //es6
+    const isTwo = (number) => number === 2;
+
+    console.log(isTwo(random));
+
+console.log(isTwo(1));
+console.log(isTwo(2));
+console.log(isTwo(3));
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
@@ -98,7 +103,7 @@ var random = Math.floor((Math.random() * 3) + 1);
  * > calculateTip(0.25, 25.50) // returns 6.37
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
-//function is called calculteTip
+//es5 tip calc
 
 // function calculateTip(num1, num2){
 //  return num * num2:
@@ -106,14 +111,14 @@ var random = Math.floor((Math.random() * 3) + 1);
 //
 // console.log(calculateTip(0.15, 10.00))
 
+    //es6
+const calculateTip = (tipPercent, amount) => tipPercent * amount;
 
-// function calculateTip(tipPrecentage, totalBill) {
-//     return tipPrecentage * totalBill;
-// }
-// console.log(calculateTip(0.20, 20)); // returns 4
-// console.log(calculateTip(0.25, 25.50)); // returns 6.37
-// console.log(calculateTip(0.15, 33.42)); // returns 5.013
-//
+// console.log(calculateTip(0.20, 20),'4');
+// console.log(calculateTip(0.25, 25.50),'6.37');
+// console.log(calculateTip(0.15, 33.42),'5.013');
+
+
 
 /**
  * TODO:
@@ -121,17 +126,31 @@ var random = Math.floor((Math.random() * 3) + 1);
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
+    //the old way
+    // var totalBill = prompt("How much is your bill");
+    // var tipPrecentage =prompt("How much do you want to tip");
+    //
 
-    var totalBill = prompt("How much is your bill");
-    var tipPrecentage =prompt("How much do you want to tip");
+    //es6
+    let totalBill = prompt("Enter thr total amount of your bill");
+    let tipPrecentage = prompt("What percent would you like to tip?");
+    const tipAmount = parseInt(calculateTip(totalBill,tipPrecentage));
+    let stringToNum = parseInt(totalBill);
+    console.log(tipAmount);
+    alert("Your total with tip is " + (tipAmount + stringToNum));
 
 
-function formatNumToCurrency(){
-    return "$" + num.toFixed(2);
-}
 
-alert("Your total tip is $" + formatNumToCurrency(totalBill, tipPrecentage));
 
+
+
+// what was i doing here?!?
+// function formatNumToCurrency(){
+//     return "$" + num.toFixed(2);
+// }
+//
+// alert("Your total tip is $" + formatNumToCurrency(totalBill, tipPrecentage));
+//
 
 
 /**
@@ -148,11 +167,11 @@ alert("Your total tip is $" + formatNumToCurrency(totalBill, tipPrecentage));
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
-function applyDiscount(originalPrice, discountPercent) {
-    return originalPrice-(originalPrice * discountPercent);
+// function applyDiscount(originalPrice, discountPercent) {
+//     return originalPrice-(originalPrice * discountPercent);
 
-}
-console.log(applyDiscount(100, .2))
+// }
+// console.log(applyDiscount(100, .2))
 
 
 

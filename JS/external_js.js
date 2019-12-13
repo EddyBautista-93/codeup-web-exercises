@@ -1,4 +1,4 @@
-"use strict";
+
 console.log("Hello from external JavaScript");
 
 alert("Welcome to my website!");
@@ -46,4 +46,4 @@ var offerIsValid = confirm("Is your offer valid?");
 var isPremiumMember = confirm("Are you A Premium Member?");
 var productDiscountApplied = offerIsValid && (isPremiumMember || numberOfItems > 2);
 
-alert("product discount apllirf " + productDiscountApplied);
+alert("product discount applied " + productDiscountApplied);
