@@ -1,4 +1,3 @@
-"use strict";
 
 /**
  * TODO:
@@ -17,36 +16,57 @@
  * Can you refactor your code to use functions?
  */
 
-var willContinue = confirm("Will you enter a number");
+// var willContinue = confirm("Will you enter a number");
+//
+// if (willContinue){
+//
+//    var userInput = prompt("Would number would you like to enter?");
+//     var isNum = !isNaN(userInput);
+//
+//     if(isNum) {
+//         var userNum = parseFloat(userInput);
+//
+//         var isEven = userInput % 2 === 0;
+//
+//
+//         var isOdd = userInput % 2 === 1;
+//     } else {
+//         alert("That's not a number!")
+//     }
+// }
 
-if (willContinue){
-
-   var userInput = prompt("Would number would you like to enter?");
-    var isNum = !isNaN(userInput);
-
-    if(isNum) {
-        var userNum = parseFloat(userInput);
-
-        var isEven = userInput % 2 === 0;
 
 
-        var isOdd = userInput % 2 === 1;
+//
+// const numberQuestion = confirm("Would you like to enter a number");
+// if(numberQuestion){
+//     const userInput= prompt("Please enter a number!");
+// }
+//     let isnum = !isNaN(userInput);
+//
+//     if(isnum){
+//         let userNumber = parseFloat(userInput);
+//
+//     } else {
+//         alert("Thats a not a number");
+//     }
+
+
+
+
+
+
+confirm("Would you like to enter a number?");
+const num = prompt("Put a number ");
+
+const isOddEven = (num) => {
+    let typeConversion = parseFloat(num);
+    if(typeConversion % 2 === 1){
+        return prompt("odd");
     } else {
-        alert("That's not a number!")
+       return  prompt("even");
     }
-
-
-
-
-}
-
-
-
-
-
-
-// confirm("Would you like to enter a number?");
-// var num = +prompt("Put a number ");
+};
 
 
 // function isNumOddEven(num) {
@@ -110,24 +130,24 @@ if (willContinue){
 // - `colors`: a list of the colors of the rainbow
 // - `randomColor`: contains a single random color value from the list (this
 //                  will contain a different color everytime the page loads)
-var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-var randomColor = colors[Math.floor(Math.random() * colors.length)];
-
-    function analyzeColor(colors) {
-        if (colors === 'blue') {
-            return "blue is the color of the sky";
-        } else if (colors === 'red') {
-            return "Strawberries are red";
-        } else if ( colors === 'cyan') {
-            return "I don't know anything about cyan";
-        } else {
-            return "I don't Know that color."
-        }
-    }
+// var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+// var randomColor = colors[Math.floor(Math.random() * colors.length)];
 //
-console.log(analyzeColor('blue'));
-console.log(analyzeColor('red'));
-console.log(analyzeColor('cyan'));
+//     function analyzeColor(colors) {
+//         if (colors === 'blue') {
+//             return "blue is the color of the sky";
+//         } else if (colors === 'red') {
+//             return "Strawberries are red";
+//         } else if ( colors === 'cyan') {
+//             return "I don't know anything about cyan";
+//         } else {
+//             return "I don't Know that color."
+//         }
+//     }
+// //
+// console.log(analyzeColor('blue'));
+// console.log(analyzeColor('red'));
+// console.log(analyzeColor('cyan'));
 
 
 /**
@@ -199,23 +219,23 @@ console.log(analyzeColor('cyan'));
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
-function calculateTotal(luckyNumber, price) {
-    if( luckyNumber === 0 ) {
-        return price;
-    } else if ( luckyNumber === 1) {
-        return ( price - (price * .10 ));
-    } else if (luckyNumber === 2){
-        return ( price - (price * .25 ));
-    } else if ( luckyNumber === 3){
-        return ( price - (price * .35 ));
-    } else if ( luckyNumber === 4) {
-        return ( price - (price * .50 ));
-    } else {
-        return (price - price);
-    }
-}
-
-console.log(calculateTotal(4, 100));
+// function calculateTotal(luckyNumber, price) {
+//     if( luckyNumber === 0 ) {
+//         return price;
+//     } else if ( luckyNumber === 1) {
+//         return ( price - (price * .10 ));
+//     } else if (luckyNumber === 2){
+//         return ( price - (price * .25 ));
+//     } else if ( luckyNumber === 3){
+//         return ( price - (price * .35 ));
+//     } else if ( luckyNumber === 4) {
+//         return ( price - (price * .50 ));
+//     } else {
+//         return (price - price);
+//     }
+// }
+//
+// console.log(calculateTotal(4, 100));
 
 
 /**
@@ -225,24 +245,24 @@ console.log(calculateTotal(4, 100));
  * and alerts to display to the user what their lucky number was, what their
  * price before the discount was, and what their price after the discount is.
  */
-Generate a random number between 0 and 6
-var luckyNumber = Math.floor(Math.random() * 6);
-var price = prompt("What is your Bill?");
-
-function calculateTotal(luckyNumber, price) {
-    if( luckyNumber === 0 ) {
-        alert("Your number was 0 , your bill is " + price);
-    } else if ( luckyNumber === 1) {
-        alert("Your number was 1, your bill of " + price + " is now " + " " + ( price - (price * .10 )));
-    } else if (luckyNumber === 2){
-        alert("Your number was 2, your bill of " + price + " is now " + " " + ( price - (price * .25 )));
-    } else if ( luckyNumber === 3){
-        alert("Your number was 3, your bill of " + price + " is now " + " " + ( price - (price * .35 )));
-    } else if ( luckyNumber === 4) {
-        alert("Your number was 4, your bill of " + price + " is now " + " " + ( price - (price * .50 )));
-    } else {
-        alert("Your number was 5, your bill of " + price + " is now " + " " + ( price - price));
-    }
-}
-
-console.log(calculateTotal(luckyNumber, price));
+// Generate a random number between 0 and 6
+// var luckyNumber = Math.floor(Math.random() * 6);
+// var price = prompt("What is your Bill?");
+//
+// function calculateTotal(luckyNumber, price) {
+//     if( luckyNumber === 0 ) {
+//         alert("Your number was 0 , your bill is " + price);
+//     } else if ( luckyNumber === 1) {
+//         alert("Your number was 1, your bill of " + price + " is now " + " " + ( price - (price * .10 )));
+//     } else if (luckyNumber === 2){
+//         alert("Your number was 2, your bill of " + price + " is now " + " " + ( price - (price * .25 )));
+//     } else if ( luckyNumber === 3){
+//         alert("Your number was 3, your bill of " + price + " is now " + " " + ( price - (price * .35 )));
+//     } else if ( luckyNumber === 4) {
+//         alert("Your number was 4, your bill of " + price + " is now " + " " + ( price - (price * .50 )));
+//     } else {
+//         alert("Your number was 5, your bill of " + price + " is now " + " " + ( price - price));
+//     }
+// }
+//
+// console.log(calculateTotal(luckyNumber, price));
