@@ -56,18 +56,34 @@
 
 
 
-confirm("Would you like to enter a number?");
-const num = prompt("Put a number ");
-
-const isOddEven = (num) => {
-    let typeConversion = parseFloat(num);
-    if(typeConversion % 2 === 1){
-        return prompt("odd");
-    } else {
-       return  prompt("even");
-    }
-};
-
+// confirm("Would you like to enter a number?");
+// const num = prompt("Put a number ");
+//
+// const isOddEven = (num) => {
+//     let typeConversion = parseFloat(num);
+//     console.log(num);
+//     if(typeConversion % 2 === 1){
+//         console.log('Its odd');
+//          alert("odd");
+//          alert("your number pulls 100 is " + (100 + parseInt(num)) + ".");
+//         if(num <= 0){
+//             return alert("its negative");
+//         } else {
+//             return  alert('Its positive')
+//         }
+//     } else {
+//         console.log('Its even');
+//         alert("even");
+//         alert("your number plus 100 is " + (100 + parseInt(num)) + ".");
+//         if(num <= 0){
+//             return alert("Its negative");
+//         } else {
+//             return alert('Its positive')
+//         }
+//     }
+// };
+//
+// isOddEven(num);
 
 // function isNumOddEven(num) {
 //     if (num % 2 === 1){
@@ -130,9 +146,10 @@ const isOddEven = (num) => {
 // - `colors`: a list of the colors of the rainbow
 // - `randomColor`: contains a single random color value from the list (this
 //                  will contain a different color everytime the page loads)
-// var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-// var randomColor = colors[Math.floor(Math.random() * colors.length)];
-//
+var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+var randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+//Old code
 //     function analyzeColor(colors) {
 //         if (colors === 'blue') {
 //             return "blue is the color of the sky";
@@ -144,6 +161,21 @@ const isOddEven = (num) => {
 //             return "I don't Know that color."
 //         }
 //     }
+
+//es6 switch statement
+const colorSwitch = (colors) => ({
+    "blue": "blue",
+    "red": "Red",
+    "orange": "Orange",
+    "yellow": "Yellow",
+    "green": "Green",
+    "indigo": "Indigo",
+    "violet": "Violet"
+})[colors];
+
+console.log(colorSwitch(randomColor));
+console.log(colorSwitch(randomColor));
+console.log(colorSwitch(randomColor));
 // //
 // console.log(analyzeColor('blue'));
 // console.log(analyzeColor('red'));
@@ -197,6 +229,9 @@ const isOddEven = (num) => {
 // }
 //
 // console.log(analyzeColor(userInput));
+
+let userInput = prompt("Enter a color");
+console.log(colorSwitch(userInput));
 
 /* ########################################################################## */
 
