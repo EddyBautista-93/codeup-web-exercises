@@ -1,6 +1,6 @@
 "use strict";
 
-// increment loop for excercise one in a arrow function
+// increment loop for exercise one in a arrow function
 const loopBy2 = () => {
     let i = 2;
     while (i < 70000){
